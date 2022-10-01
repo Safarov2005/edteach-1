@@ -16,7 +16,7 @@ npm install
 
 ## Run the app
 
-You need four terminal instances - one for client app and three for backend servers.
+4 ta terminal kere buladi proyectni ishlatish uchun.
 
 ```bash
 cd client
@@ -38,7 +38,7 @@ cd server
 npm run devStartSocket
 ```
 
-## Generate JWT tokens
+## JWT ni jenratsiya qilish.
 
 ```bash
 ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
@@ -51,9 +51,9 @@ cat jwtRS256.key.pub
 ## Env configuration
 
 ```
-DATABASE_URL=string (required)
-PORT=3000 (required number)
-AUTH_PORT=4000 (required number)
-ACCESS_TOKEN_SECRET=string (required string)
-REFRESH_TOKEN_SECRET=string (required string)
+DATABASE_URL=
+PORT=3000
+AUTH_PORT=4000
+ACCESS_TOKEN_SECRET=
+REFRESH_TOKEN_SECRET=
 ```
