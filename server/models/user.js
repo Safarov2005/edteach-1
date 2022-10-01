@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   userType: {
     type: String,
-    enum: ["Student", "Teacher"],
     required: true,
   },
   firstName: {
@@ -24,7 +23,7 @@ const userSchema = new mongoose.Schema({
   mail: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   password: {
     type: String,

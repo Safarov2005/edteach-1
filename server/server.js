@@ -12,6 +12,7 @@ const {
 } = require("./middleware/auth");
 
 const userRouter = require("./routes/user");
+const authRouter = require("./routes/auth");
 const quizRouter = require("./routes/quiz");
 const gameRouter = require("./routes/game");
 const playerResultRouter = require("./routes/playerResult");
@@ -25,6 +26,7 @@ db.once("open", () => console.log("Connected to database"));
 
 app.use(express.json({limit: '5mb'}));
 app.use(cors());
+app.use("/api/auth", authRouter);
 app.use(authenticateToken);
 //app.use(regenerateAccessToken);
 
