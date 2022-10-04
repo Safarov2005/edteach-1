@@ -1,7 +1,7 @@
 import {
   FETCH_ALL_QUIZES,
   FETCH_PUBLIC_QUIZES,
-  FETCH_TEACHER_QUIZES,
+  FETCH_Ustoz_QUIZES,
   CREATE_QUIZ,
   DELETE_QUIZ,
   UPDATE_QUIZ,
@@ -11,27 +11,27 @@ import {
   START_LOADING,
   END_LOADING,
   COMMENT_QUIZ,
-} from "../constants/actionTypes"
+} from "../constants/actionTypes";
 
 const reducer = (state = { isLoading: true, quizes: [] }, action) => {
   switch (action.type) {
     case START_LOADING:
-      return { ...state, isLoading: true }
+      return { ...state, isLoading: true };
     case END_LOADING:
-      return { ...state, isLoading: false }
+      return { ...state, isLoading: false };
     case FETCH_PUBLIC_QUIZES:
       return {
         ...state,
         quizes: action.payload.data,
         currentPage: action.payload.currentPage,
         numberOfPages: action.payload.numberOfPages,
-      }
+      };
     case FETCH_ALL_QUIZES:
-    case FETCH_TEACHER_QUIZES:
+    case FETCH_Ustoz_QUIZES:
     case FETCH_QUIZES_BY_SEARCH:
-      return { ...state, quizes: action.payload }
+      return { ...state, quizes: action.payload };
     case CREATE_QUIZ:
-      return { ...state, quizes: [...state.quizes, action.payload] }
+      return { ...state, quizes: [...state.quizes, action.payload] };
     case UPDATE_QUIZ:
     case LIKE_QUIZ:
       return {
@@ -39,27 +39,27 @@ const reducer = (state = { isLoading: true, quizes: [] }, action) => {
         quizes: state.quizes.map((quiz) =>
           quiz._id === action.payload._id ? action.payload : quiz
         ),
-      }
+      };
     case COMMENT_QUIZ:
       return {
         ...state,
         quizes: state.quizes.map((quiz) => {
           if (quiz._id === action.payload._id) {
-            return action.payload
+            return action.payload;
           }
-          return quiz
+          return quiz;
         }),
-      }
+      };
     case DELETE_QUIZ:
       return {
         ...state,
         quizes: state.quizes.filter((quiz) => quiz._id !== action.payload),
-      }
+      };
     case FETCH_QUIZ:
-      return { ...state, quiz: action.payload.quiz }
+      return { ...state, quiz: action.payload.quiz };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

@@ -4,16 +4,16 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
 
 function Footer() {
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
   return (
     <footer className={styles.footer}>
       <div className={styles["footer-container"]}>
         <div className={styles["footer-row"]}>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "About" : "O nas"}</h4>
+            <h4>{isLanguageEnglish ? "About" : "Biz haqimizda"}</h4>
             <ul>
               <li>
                 <a href="/">{isLanguageEnglish ? "Company" : "Firma"}</a>
@@ -25,7 +25,7 @@ function Footer() {
                 <a href="/">Blog</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "Contact" : "Kontakt"}</a>
+                <a href="/">{isLanguageEnglish ? "Contact" : "Aloqa"}</a>
               </li>
             </ul>
           </div>
@@ -80,7 +80,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer;

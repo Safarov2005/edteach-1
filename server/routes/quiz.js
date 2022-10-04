@@ -6,7 +6,7 @@ const {
   getQuizes,
   getPublicQuizes,
   getQuizesBySearch,
-  getTeacherQuizes,
+  getUstozQuizes,
   getQuiz,
   updateQuiz,
   deleteQuiz,
@@ -16,37 +16,27 @@ const {
   updateQuestion,
   deleteQuestion,
   likeQuiz,
-  commentQuiz
+  commentQuiz,
 } = require("../controllers/quiz");
 
-router
-    .route("/")
-    .get(getQuizes)
-    .post(createQuiz);
+router.route("/").get(getQuizes).post(createQuiz);
 
-router.get("/public", getPublicQuizes)
-router.get("/search", getQuizesBySearch)
+router.get("/public", getPublicQuizes);
+router.get("/search", getQuizesBySearch);
 
-router.get("/teacher/:teacherId", getTeacherQuizes)
+router.get("/Ustoz/:UstozId", getUstozQuizes);
 
-router
-    .route("/:id")
-    .get(getQuiz)
-    .patch(updateQuiz)
-    .delete(deleteQuiz);
+router.route("/:id").get(getQuiz).patch(updateQuiz).delete(deleteQuiz);
 
-router.patch("/:id/likeQuiz", likeQuiz)
-router.post("/:id/commentQuiz", commentQuiz)
+router.patch("/:id/likeQuiz", likeQuiz);
+router.post("/:id/commentQuiz", commentQuiz);
+
+router.route("/:quizId/questions").post(addQuestion).get(getQuestions);
 
 router
-    .route('/:quizId/questions')
-    .post(addQuestion)
-    .get(getQuestions);
-
-router
-    .route('/:quizId/questions/:questionId')
-    .get(getQuestion)
-    .patch(updateQuestion)
-    .delete(deleteQuestion)
+  .route("/:quizId/questions/:questionId")
+  .get(getQuestion)
+  .patch(updateQuestion)
+  .delete(deleteQuestion);
 
 module.exports = router;

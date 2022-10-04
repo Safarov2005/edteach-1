@@ -1,14 +1,15 @@
-import React from "react"
-import styles from "./home.module.css"
-import img1 from "../../assets/img1.jpeg"
-import img2 from "../../assets/img2.jpeg"
-import img3 from "../../assets/img3.svg"
-import img4 from "../../assets/img4.svg"
-import img5 from "../../assets/img5.svg"
-import { useSelector } from "react-redux"
+import React from "react";
+import styles from "./home.module.css";
+import img1 from "../../assets/img1.jpeg";
+import img2 from "../../assets/img2.jpeg";
+import img3 from "../../assets/img3.svg";
+import img4 from "../../assets/img4.svg";
+import img5 from "../../assets/img5.svg";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Home() {
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
 
   return (
     <main className={styles.page}>
@@ -17,21 +18,14 @@ function Home() {
           <div className={styles.banner}>
             <div className={styles["banner-body"]}>
               <h2 className={styles["banner-title"]}>
-                {isLanguageEnglish
-                  ? "Make learning awesome"
-                  : "Spraw, aby nauka stała się niesamowita"}
+                {isLanguageEnglish ? "Make learning awesome" : "Oson o`rganing"}
               </h2>
-              <p className={styles["banner-description"]}>
-                {isLanguageEnglish
-                  ? "Quizzly delivers engaging learning to billions"
-                  : "Quizzly zapewnia angażującą naukę milionom użytkowników"}
-              </p>
               <button className={styles["banner-button"]}>
-                <a href="/">
+                <Link to="/auth">
                   {isLanguageEnglish
                     ? "Sign up for free"
-                    : "Zarejestruj się za darmo"}
-                </a>
+                    : "Bepul ro`yhatdan o`ting"}
+                </Link>
               </button>
             </div>
             <img src={img1} alt="" className={styles["banner-image"]} />
@@ -39,18 +33,13 @@ function Home() {
           <div className={styles.banner}>
             <div className={styles["banner-body"]}>
               <h2 className={styles["banner-title"]}>
-                {isLanguageEnglish ? "Explore content" : "Przeglądaj treść"}
+                {isLanguageEnglish ? "Explore content" : "Testlarga o`tish"}
               </h2>
-              <p className={styles["banner-description"]}>
-                {isLanguageEnglish
-                  ? "Explore content and join one of the world’s largest educator communities."
-                  : "Przeglądaj treści i dołącz do jednej z największych na świecie społeczności nauczycieli"}
-              </p>
               <button className={styles["banner-button"]}>
                 <a href="/">
                   {isLanguageEnglish
                     ? "Check public quizes"
-                    : "Sprawdź publiczne quizy"}
+                    : "Ommaviy testlar"}
                 </a>
               </button>
             </div>
@@ -66,11 +55,11 @@ function Home() {
               </h2>
               <p className={styles["info-description"]}>
                 {isLanguageEnglish
-                  ? "Engaging group and distance learning for teachers and students."
+                  ? "Engaging group and distance learning for Ustozs and Talabas."
                   : "Angażująca nauka grupowa i na odległość dla nauczycieli i uczniów."}
               </p>
               <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Dowiedz się więcej"} &gt;
+                {isLanguageEnglish ? "Learn more" : "Ko`proq ma`lumot."} &gt;
               </a>
             </div>
           </div>
@@ -85,7 +74,7 @@ function Home() {
                   : "Realizuj szkolenia, prezentacje, spotkania i wydarzenia osobiście lub na dowolnej platformie do wideokonferencji."}
               </p>
               <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Dowiedz się więcej"} &gt;
+                {isLanguageEnglish ? "Learn more" : "Ko`proq ma`lumot."} &gt;
               </a>
             </div>
           </div>
@@ -100,7 +89,7 @@ function Home() {
                   : "Gry edukacyjne do rodzinnej zabawy lub nauki w domu."}
               </p>
               <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Dowiedz się więcej"} &gt;
+                {isLanguageEnglish ? "Learn more" : "Ko`proq ma`lumot."} &gt;
               </a>
             </div>
           </div>
@@ -109,13 +98,13 @@ function Home() {
           <h1>
             {isLanguageEnglish
               ? "How does Quizzly work?"
-              : "Jak działa aplikacja?"}
+              : "Sayt qanday ishlaydi?"}
           </h1>
           <div className={styles["card-container"]}>
             <div className={styles.card}>
               <img src={img3} alt="" />
               <div className={styles["card-body"]}>
-                <h1>{isLanguageEnglish ? "Create" : "Twórz"}</h1>
+                <h1>{isLanguageEnglish ? "Create" : "Testni yarating."}</h1>
                 <p>
                   {isLanguageEnglish
                     ? "It only takes minutes to create a learning game or trivia quiz on any topic, in any language."
@@ -127,9 +116,7 @@ function Home() {
               <img src={img4} alt="" />
               <div className={styles["card-body"]}>
                 <h1>
-                  {isLanguageEnglish
-                    ? "Host or share"
-                    : "Hostuj albo udostępnij"}
+                  {isLanguageEnglish ? "Host or share" : "Yuklang va ulashing."}
                 </h1>
                 <p>
                   {isLanguageEnglish
@@ -141,11 +128,11 @@ function Home() {
             <div className={styles.card}>
               <img src={img5} alt="" />
               <div className={styles["card-body"]}>
-                <h1>{isLanguageEnglish ? "Play" : "Graj"}</h1>
+                <h1>{isLanguageEnglish ? "Play" : "O`yin"}</h1>
                 <p>
                   {isLanguageEnglish
                     ? "Game on! Join a kahoot with a PIN provided by the host and answer questions on your device."
-                    : "Graj dalej! Dołącz do kahoot za pomocą kodu PIN dostarczonego przez gospodarza i odpowiadać na pytania na swoim urządzeniu."}
+                    : "O`yin dalej! Dołącz do kahoot za pomocą kodu PIN dostarczonego przez gospodarza i odpowiadać na pytania na swoim urządzeniu."}
                 </p>
               </div>
             </div>
@@ -153,18 +140,18 @@ function Home() {
           <div className={styles["card-button"]}>
             {isLanguageEnglish
               ? "Play Quizzly to see how it works."
-              : "Zagraj w Quizzly, aby zobaczyć, jak to działa."}{" "}
+              : "Testlarni yechib buni qanday ishlashini bilib oling."}{" "}
             &nbsp;
             <a href="/">
               {isLanguageEnglish
                 ? "Explore our public quizes"
-                : "Przeglądaj publiczne quizy"}
+                : "Bizning ommaviy testlarimizga o`ting"}
             </a>
           </div>
         </section>
       </section>
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;

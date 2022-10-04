@@ -53,24 +53,24 @@ const quizSchema = new mongoose.Schema({
         },
       ],
       questionIndex: { type: Number, required: true },
-      // correctAnswersList: [
-      //   {
-      //     name: { type: String },
-      //     body: { type: String },
-      //   },
-      // ],
-      // answerList: [
-      //   {
-      //     name: { type: String },
-      //     content: { type: String },
-      //   },
-      // ],
-      // correctAnswer: [
-      //   {
-      //     name: { type: String },
-      //     content: { type: String },
-      //   },
-      // ],
+      correctAnswersList: [
+        {
+          name: { type: String },
+          body: { type: String },
+        },
+      ],
+      answerList: [
+        {
+          name: { type: String },
+          content: { type: String },
+        },
+      ],
+      correctAnswer: [
+        {
+          name: { type: String },
+          content: { type: String },
+        },
+      ],
     },
   ],
 })

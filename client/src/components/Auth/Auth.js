@@ -32,14 +32,14 @@ function Auth() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (isSignup) {
-      dispatch(register(formData, history))
+      dispatch(register(formData, history));
     } else {
-      dispatch(login(formData, history))
+      dispatch(login(formData, history));
     }
   };
   const handleChange = (e) => {
@@ -65,7 +65,7 @@ function Auth() {
               : "Zarejestruj się"
             : isLanguageEnglish
             ? "Sign in"
-            : "Zaloguj się"}
+            : "Kirish się"}
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
@@ -73,25 +73,29 @@ function Auth() {
               <>
                 <Input
                   name="firstName"
-                  label={isLanguageEnglish ? "First Name" : "Imię"}
+                  label={isLanguageEnglish ? "First Name" : "Ism"}
                   handleChange={handleChange}
                   autoFocus
                   half
                 />
                 <Input
                   name="lastName"
-                  label={isLanguageEnglish ? "Last Name" : "Nazwisko"}
+                  label={isLanguageEnglish ? "Last Name" : "Familya"}
                   handleChange={handleChange}
                   half
                 />
                 <Input
                   name="userType"
-                  label={isLanguageEnglish ? "User type" : "Rodzaj konta"}
+                  label={
+                    isLanguageEnglish
+                      ? "User type"
+                      : "Ustoz yoki Talaba: Bosh harf bilan yozing!"
+                  }
                   handleChange={handleChange}
                 />
                 <Input
                   name="mail"
-                  label={isLanguageEnglish ? "Email address" : "Email"}
+                  label={isLanguageEnglish ? "Email address" : "Email manzil"}
                   handleChange={handleChange}
                   type="email"
                 />
@@ -100,12 +104,12 @@ function Auth() {
 
             <Input
               name="userName"
-              label={isLanguageEnglish ? "User Name" : "Nazwa użytkownika"}
+              label={isLanguageEnglish ? "User Name" : "Foydalanuvchi nomi"}
               handleChange={handleChange}
             />
             <Input
               name="password"
-              label={isLanguageEnglish ? "Password" : "Hasło"}
+              label={isLanguageEnglish ? "Password" : "Maxfiy parol"}
               handleChange={handleChange}
               type={showPassword ? "text" : "password"}
               handleShowPassword={handleShowPassword}
@@ -113,7 +117,11 @@ function Auth() {
             {isSignup && (
               <Input
                 name="confirmPassword"
-                label={isLanguageEnglish ? "Repeat password" : "Powtórz hasło"}
+                label={
+                  isLanguageEnglish
+                    ? "Repeat password"
+                    : "Maxfiy parol qayta tering!"
+                }
                 handleChange={handleChange}
                 type="password"
               />
@@ -129,10 +137,10 @@ function Auth() {
             {isSignup
               ? isLanguageEnglish
                 ? "Sign up"
-                : "Zarejestruj się"
+                : "Ro`yhatdan o`ting"
               : isLanguageEnglish
               ? "Sign in"
-              : "Zaloguj się"}
+              : "Kirish"}
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
@@ -140,17 +148,17 @@ function Auth() {
                 {isSignup
                   ? isLanguageEnglish
                     ? "Already have an account? Sign in"
-                    : "Masz już konto? Zaloguj się"
+                    : "Allaqachon hiobingiz bormi? Kirish"
                   : isLanguageEnglish
                   ? "Don't have an account? Sign Up"
-                  : "Nie masz konta? Zarejestruj się"}
+                  : "Hisobingiz bo`lmasa, Ro`yhatdan o`tish."}
               </Button>
             </Grid>
           </Grid>
         </form>
       </Paper>
     </Container>
-  )
+  );
 }
 
 export default Auth;

@@ -41,6 +41,7 @@ body {
   list-style: none;
   margin-right: auto;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .logo-img{

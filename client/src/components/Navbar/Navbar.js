@@ -1,38 +1,38 @@
-import React, { useState, useEffect } from "react"
-import styles from "./navbar.module.css"
-import { Link, useHistory, useLocation } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
-import decode from "jwt-decode"
-import * as actionType from "../../constants/actionTypes"
-import globe from "../../assets/globe.svg"
-import logo from "../../assets/logo.png"
-import { changeLanguage } from "../../actions/language"
+import React, { useState, useEffect } from "react";
+import styles from "./navbar.module.css";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import decode from "jwt-decode";
+import * as actionType from "../../constants/actionTypes";
+import globe from "../../assets/globe.svg";
+import logo from "../../assets/logo.png";
+import { changeLanguage } from "../../actions/language";
 
 function Navbar() {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
-  const dispatch = useDispatch()
-  const location = useLocation()
-  const history = useHistory()
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
-  const socket = useSelector((state) => state.socket.socket)
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const history = useHistory();
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
+  const socket = useSelector((state) => state.socket.socket);
 
   const logout = () => {
-    dispatch({ type: actionType.LOGOUT })
-    history.push("/auth")
-    setUser(null)
-    socket.disconnect()
-  }
+    dispatch({ type: actionType.LOGOUT });
+    history.push("/auth");
+    setUser(null);
+    socket.disconnect();
+  };
 
   useEffect(() => {
-    const token = user?.accessToken
+    const token = user?.accessToken;
     if (token) {
-      const decodedToken = decode(token)
+      const decodedToken = decode(token);
       if (decodedToken.exp * 1000 < new Date().getTime()) {
-        logout()
+        logout();
       }
     }
-    setUser(JSON.parse(localStorage.getItem("profile")))
-  }, [location])
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [location]);
 
   return (
     <header>
@@ -45,67 +45,57 @@ function Navbar() {
               </Link>
             </li>
             <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "About" : "O nas"}
-              <ul className={styles["nav__list-item-drop"]}>
-                <li>{isLanguageEnglish ? "How it works" : "Jak to działa"} </li>
-                <li>{isLanguageEnglish ? "Ways to play" : "Sposoby na grę"}</li>
-              </ul>
+              {isLanguageEnglish ? "About" : "Biz haqimizda"}
             </li>
             <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "Study" : "Ucz się"}
+              {isLanguageEnglish ? "Study" : "Testlar"}
               <ul className={styles["nav__list-item-drop"]}>
                 <li>
                   <Link to="/quizes">
-                    {isLanguageEnglish ? "Public quizes" : "Publiczne quizy"}
+                    {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
                   </Link>
                 </li>
-                <li>{isLanguageEnglish ? "Test game" : "Przetestuj grę"}</li>
+                <li>{isLanguageEnglish ? "Test game" : "Test o`yini"}</li>
               </ul>
             </li>
           </ul>
         </div>
         <div className={styles["menu-left"]}>
           <ul className={styles.nav__list}>
-            <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "Contact" : "Kontakt"}
-            </li>
-
             {user ? (
               <>
-                  <li className={styles["nav__list-item"]}>
+                {/* <li className={styles["nav__list-item"]}>
                   <Link to="/games/joingame">
-                    {isLanguageEnglish ? "Play" : "Graj"}
+                    {isLanguageEnglish ? "Play" : "O`yin"}
                   </Link>
-                </li>
-                {user.result.userType === "Teacher" && (
+                </li> */}
+                {user.result.userType === "Ustoz" && (
                   <li className={styles["nav__list-item"]}>
                     <Link to="/myquizes">
-                      {isLanguageEnglish ? "My Quizes" : "Moje Quizy"}
+                      {isLanguageEnglish ? "My Quizes" : "Testlarim"}
                     </Link>
                   </li>
                 )}
-                <li className={styles["nav__list-item"]}>
-                  {user.result.firstName}
-                </li>
+
                 <li onClick={logout} className={styles["nav__list-item"]}>
-                  {isLanguageEnglish ? "Log out" : "Wyloguj"}
+                  {isLanguageEnglish ? "Log out" : "Chiqish"}
                 </li>
               </>
             ) : (
               <Link to="/auth" className={styles["nav__list-item"]}>
-                {isLanguageEnglish ? "Log in" : "Zaloguj"}
+                {isLanguageEnglish ? "Log in" : "Kirish"}
               </Link>
             )}
             <li className={styles["nav__list-item"]}>
               <img src={globe} alt="" />
-              {isLanguageEnglish ? "EN" : "PL"}
+              {isLanguageEnglish ? "EN" : "UZ"}
               <ul className={styles["nav__list-item-drop"]}>
                 <li
                   onClick={() => {
-                    dispatch(changeLanguage(!isLanguageEnglish))
+                    dispatch(changeLanguage(!isLanguageEnglish));
                   }}
                 >
-                  {isLanguageEnglish ? "Polski" : "English"}
+                  {isLanguageEnglish ? "O`zbek" : "English"}
                 </li>
               </ul>
             </li>
@@ -113,7 +103,7 @@ function Navbar() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

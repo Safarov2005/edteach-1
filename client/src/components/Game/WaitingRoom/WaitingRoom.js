@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react"
-import { useSelector } from "react-redux"
-import styles from "./waitingRoom.module.css"
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import styles from "./waitingRoom.module.css";
 
 function WaitingRoom({ pin, socket }) {
-  const [playerList, setPlayerList] = useState([])
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const [playerList, setPlayerList] = useState([]);
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
 
   useEffect(() => {
     socket.on("player-added", (player) => {
-      setPlayerList([...playerList, player])
-    })
-  }, [playerList, socket])
+      setPlayerList([...playerList, player]);
+    });
+  }, [playerList, socket]);
 
   return (
     <div className={styles["waiting-room"]}>
@@ -19,7 +19,7 @@ function WaitingRoom({ pin, socket }) {
       </h1>
       <h2 className={styles["header"]}>
         {isLanguageEnglish
-          ? "Show PIN to your students"
+          ? "Show PIN to your Talabas"
           : "Pokaż pin swoim uczniom"}
         : {pin}
       </h2>
@@ -33,7 +33,7 @@ function WaitingRoom({ pin, socket }) {
               {playerList.map((player) => (
                 <li>
                   <mark>{player.userName}</mark>
-                  <small>{isLanguageEnglish ? "Student" : "Uczeń"}</small>
+                  <small>{isLanguageEnglish ? "Talaba" : "Uczeń"}</small>
                 </li>
               ))}
             </ol>
@@ -47,7 +47,7 @@ function WaitingRoom({ pin, socket }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default WaitingRoom
+export default WaitingRoom;
