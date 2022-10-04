@@ -270,13 +270,13 @@ function QuizCreator() {
                 : quizData.name
               : isLanguageEnglish
               ? "Set quiz name"
-              : "Wprowadź nazwę quizu"}
+              : "Savol nomini o`zgartiring..."}
           </h1>
           <button
             className={styles["quiz-info-button"]}
             onClick={showQuizOptions}
           >
-            {isLanguageEnglish ? "Settings" : "Ustawienia"}
+            {isLanguageEnglish ? "Settings" : "Sozlamalar"}
           </button>
         </div>
         <div className={styles["question-list-container"]}>
@@ -300,12 +300,12 @@ function QuizCreator() {
                 : alert(
                     isLanguageEnglish
                       ? "Save changes in question data first"
-                      : "Zapisz najpierw zmiany w pytaniu"
+                      : "O`zgartirilgan savol ma`lumotlarini saqlang"
                   );
             }}
             className={styles["add-question-button"]}
           >
-            {isLanguageEnglish ? "Add question" : "Dodaj pytanie"}
+            {isLanguageEnglish ? "Add question" : "Savol qo`shish"}
           </button>
         </div>
       </div>
@@ -318,7 +318,7 @@ function QuizCreator() {
           placeholder={
             isLanguageEnglish
               ? "Write your question here"
-              : "Zacznij wpisywać swoje pytanie"
+              : "Savolingizni yozing"
           }
           className={styles["question-name"]}
         />
@@ -326,7 +326,7 @@ function QuizCreator() {
           <h3>
             {isLanguageEnglish
               ? "Find and upload an image"
-              : "Znajdź i wstaw zdjęcie"}
+              : "Rasmni toping va yuklang"}
           </h3>
           <div>
             <FileBase
@@ -357,7 +357,7 @@ function QuizCreator() {
                   : alert(
                       isLanguageEnglish
                         ? "You already choose the correct answer"
-                        : "Wybrałeś już poprawną odpowiedź"
+                        : "Allaqachon to`g`ri javob tanlangan"
                     );
               }}
               isAnswerCorrect={questionData.answerList[0].isCorrect}
@@ -380,7 +380,7 @@ function QuizCreator() {
                   : alert(
                       isLanguageEnglish
                         ? "You already choose the correct answer"
-                        : "Wybrałeś już poprawną odpowiedź"
+                        : "Siz allaqachon to`g`ri javob tanladingiz"
                     );
               }}
               isAnswerCorrect={questionData.answerList[1].isCorrect}
@@ -403,7 +403,7 @@ function QuizCreator() {
                       : alert(
                           isLanguageEnglish
                             ? "You already choose the correct answer"
-                            : "Wybrałeś już poprawną odpowiedź"
+                            : "Siz allaqachon to`g`ri javob tanladingiz! To`g`ri javobni o`zgartirish uchun joriy to`gri javobni olib tashang!"
                         );
                   }}
                   isAnswerCorrect={questionData.answerList[2].isCorrect}
@@ -424,7 +424,7 @@ function QuizCreator() {
                       : alert(
                           isLanguageEnglish
                             ? "You already choose the correct answer"
-                            : "Wybrałeś już poprawną odpowiedź"
+                            : "Siz allaqachon to`g`ri javob tanladingiz"
                         );
                   }}
                   isAnswerCorrect={questionData.answerList[3].isCorrect}
@@ -442,7 +442,7 @@ function QuizCreator() {
         >
           <h1>Quiz</h1>
           <div className={styles["option-label"]}>
-            <label>{isLanguageEnglish ? "Title" : "Nazwa"}</label>
+            <label>{isLanguageEnglish ? "Title" : "Bosh sahifa"}</label>
           </div>
           <input
             value={quizData.name}
@@ -451,7 +451,7 @@ function QuizCreator() {
             onChange={handleQuizChange}
           />
           <div className={styles["option-label"]}>
-            <label>{isLanguageEnglish ? "Description" : "Opis"}</label>
+            <label>{isLanguageEnglish ? "Description" : "Qo`shimcha taglavha"}</label>
           </div>
           <input
             value={quizData.description}
@@ -461,7 +461,7 @@ function QuizCreator() {
           />
           <div className={styles["option-label"]}>
             <label>
-              {isLanguageEnglish ? "Points per question" : "Punkty za pytanie"}
+              {isLanguageEnglish ? "Points per question" : "Har bir savol bali"}
             </label>
           </div>
           <input
@@ -472,7 +472,7 @@ function QuizCreator() {
             onChange={handleQuizChange}
           />
           <div className={styles["option-label"]}>
-            <label>{isLanguageEnglish ? "Access" : "Dostępność quizu"}</label>
+            <label>{isLanguageEnglish ? "Access" : "Kirish"}</label>
           </div>
           <div>
             <button
@@ -486,7 +486,7 @@ function QuizCreator() {
                 color: isQuizPublic ? "white" : "rgb(110, 110, 110)",
               }}
             >
-              {isLanguageEnglish ? "Public" : "Publiczny"}
+              {isLanguageEnglish ? "Public" : "Ommaviy"}
             </button>
             <button
               onClick={() => {
@@ -499,12 +499,12 @@ function QuizCreator() {
                 color: isQuizPublic ? "rgb(110, 110, 110)" : "white",
               }}
             >
-              {isLanguageEnglish ? "Private" : "Prywatny"}
+              {isLanguageEnglish ? "Private" : "Shaxsiy"}
             </button>
           </div>
           <div className={styles["option-label"]}>
             <label>
-              {isLanguageEnglish ? "Background Image" : "Zdjęcie w tle"}
+              {isLanguageEnglish ? "Background Image" : "Orqa fon rasmi"}
             </label>
           </div>
           <div>
@@ -540,7 +540,7 @@ function QuizCreator() {
               className={styles["option-button"]}
               onClick={handleQuizSubmit}
             >
-              {isLanguageEnglish ? "Submit" : "Zakończ tworzenie quizu"}
+              {isLanguageEnglish ? "Submit" : "Jo`natmoq"}
             </button>
           </div>
         </div>
@@ -552,7 +552,7 @@ function QuizCreator() {
             <div className={styles["option-label"]}>
               <img src={questionType} alt="" />
               <label>
-                {isLanguageEnglish ? "Question type" : "Typ pytania"}
+                {isLanguageEnglish ? "Question type" : "Savol turi"}
               </label>
             </div>
             <select
@@ -566,18 +566,18 @@ function QuizCreator() {
               <option defaultValue disabled>
                 {isLanguageEnglish
                   ? "Select question type"
-                  : "Wybierz typ pytania"}
+                  : "Savol turi"}
               </option>
               <option value="Quiz">Quiz</option>
               <option value="True/False">
-                {isLanguageEnglish ? "True/False" : "Prawda/Fałsz"}
+                {isLanguageEnglish ? "True/False" : "True/False"}
               </option>
             </select>
           </div>
           <div className={styles.option}>
             <div className={styles["option-label"]}>
               <img src={timer} alt="" />
-              <label>{isLanguageEnglish ? "Time limit" : "Limit czasu"}</label>
+              <label>{isLanguageEnglish ? "Time limit" : "Vaqt oralig`i"}</label>
             </div>
             <select
               onChange={handleQuestionChange}
@@ -585,7 +585,7 @@ function QuizCreator() {
               value={questionData.answerTime}
             >
               <option defaultValue disabled>
-                {isLanguageEnglish ? "Set time limit" : "Ustaw limit czasu"}
+                {isLanguageEnglish ? "Set time limit" : "Vaqt oralig`ini o`zgartirish"}
               </option>
               <option value={5}>
                 5 {isLanguageEnglish ? "seconds" : "sekund"}
@@ -600,17 +600,17 @@ function QuizCreator() {
                 30 {isLanguageEnglish ? "seconds" : "sekund"}
               </option>
               <option value={60}>
-                1 {isLanguageEnglish ? "minute" : "minuta"}
+                1 {isLanguageEnglish ? "minute" : "minut"}
               </option>
               <option value={90}>
-                1,5 {isLanguageEnglish ? "minute" : "minuty"}
+                1,5 {isLanguageEnglish ? "minute" : "minut"}
               </option>
             </select>
           </div>
           <div className={styles.option}>
             <div className={styles["option-label"]}>
               <img src={gamePoints} alt="" />
-              <label>{isLanguageEnglish ? "Points" : "Punkty"}</label>
+              <label>{isLanguageEnglish ? "Points" : "Ball"}</label>
             </div>
             <select
               onChange={handleQuestionChange}
@@ -620,16 +620,16 @@ function QuizCreator() {
               <option defaultValue disabled>
                 {isLanguageEnglish
                   ? "Set points type"
-                  : "Wybierz sposób przyznania punktów"}
+                  : "Ball turini belgilang"}
               </option>
               <option value="Standard">Standard</option>
               <option value="Double">
-                {isLanguageEnglish ? "Double" : "Podwójna ilość"}
+                {isLanguageEnglish ? "Double" : "Ikki martalik"}
               </option>
               <option value="BasedOnTime">
                 {isLanguageEnglish
                   ? "Based on Time"
-                  : "Na podstawie czasu odpowiedzi"}
+                  : "Vaqtga asoslangan"}
               </option>
             </select>
           </div>
@@ -637,7 +637,7 @@ function QuizCreator() {
             <div className={styles["option-label"]}>
               <img src={answerOptions} alt="" />
               <label>
-                {isLanguageEnglish ? "Answer options" : "Opcje odpowiedzi"}
+                {isLanguageEnglish ? "Answer options" : "Variantlarga javob berish"}
               </label>
             </div>
             <select onChange={changeMaxCorrectAnswerCount}>
@@ -647,10 +647,10 @@ function QuizCreator() {
                   : "Wybierz opcje odpowiedzi"}
               </option>
               <option value="1">
-                {isLanguageEnglish ? "Single choice" : "Pojedynczy wybór"}
+                {isLanguageEnglish ? "Single choice" : "Yagona tanlov"}
               </option>
               <option value="4">
-                {isLanguageEnglish ? "Multiple choice" : "Wielokrotny wybór"}
+                {isLanguageEnglish ? "Multiple choice" : "Ko'p tanlov"}
               </option>
             </select>
           </div>
@@ -659,13 +659,13 @@ function QuizCreator() {
               onClick={handleQuestionSubmit}
               className={styles["option-button"]}
             >
-              {isLanguageEnglish ? "Save changes" : "Zapisz zmiany"}
+              {isLanguageEnglish ? "Save changes" : "O`zgarishlarni saqlang"}
             </button>
             <button
               onClick={handleQuestionRemove}
               className={styles["option-button"]}
             >
-              {isLanguageEnglish ? "Delete" : "Usuń"}
+              {isLanguageEnglish ? "Delete" : "O`chirmoq"}
             </button>
           </div>
         </div>

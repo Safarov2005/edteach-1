@@ -54,7 +54,7 @@ function MyQuiz({ quiz }) {
           </h4>
           <div className={styles["card-buttons"]}>
             <button onClick={addGame}>
-              {isLanguageEnglish ? "Start a game" : "Rozpocznij grę"}
+              {isLanguageEnglish ? "Start a game" : "Boshlash"}
             </button>
             <button onClick={openQuizPage}>
               <MoreHorizIcon fontSize="medium" />

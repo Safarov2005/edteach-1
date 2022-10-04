@@ -62,10 +62,10 @@ function Auth() {
           {isSignup
             ? isLanguageEnglish
               ? "Sign up"
-              : "Zarejestruj się"
+              : "Ro`yhatdan o`tmoq"
             : isLanguageEnglish
             ? "Sign in"
-            : "Kirish się"}
+            : "Kirish"}
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
@@ -80,7 +80,7 @@ function Auth() {
                 />
                 <Input
                   name="lastName"
-                  label={isLanguageEnglish ? "Last Name" : "Familya"}
+                  label={isLanguageEnglish ? "Last Name" : "Familiya"}
                   handleChange={handleChange}
                   half
                 />
@@ -104,7 +104,7 @@ function Auth() {
 
             <Input
               name="userName"
-              label={isLanguageEnglish ? "User Name" : "Foydalanuvchi nomi"}
+              label={isLanguageEnglish ? "User Name" : "Foydalanuvchi nomi. Maxsimal 5ta belgi"}
               handleChange={handleChange}
             />
             <Input

@@ -187,7 +187,7 @@ function PlayerScreen() {
       )}
       {isQuestionAnswered && (
         <div className={styles["question-preview"]}>
-          <h1>{isLanguageEnglish ? "Wait for a result" : "Czekaj na wynik"}</h1>
+          <h1>{isLanguageEnglish ? "Wait for a result" : "Natijani kuting"}</h1>
           <CircularProgress />
         </div>
       )}
@@ -196,18 +196,18 @@ function PlayerScreen() {
           className={styles["question-preview"]}
           style={{ backgroundColor: result.points > 0 ? "green" : "red" }}
         >
-          <h1>{isLanguageEnglish ? "Result" : "Wynik"}</h1>
+          <h1>{isLanguageEnglish ? "Result" : "Natija"}</h1>
           <h3>
             {result.points > 0
               ? isLanguageEnglish
                 ? "Correct"
-                : "Dobrze"
+                : "To`g`ri"
               : isLanguageEnglish
               ? "Wrong"
-              : "Źle"}
+              : "Xato"}
           </h3>
           <h3>
-            {isLanguageEnglish ? "Points: " : "Punkty: "} {result.points}
+            {isLanguageEnglish ? "Points: " : "Ballar: "} {result.points}
           </h3>
         </div>
       )}

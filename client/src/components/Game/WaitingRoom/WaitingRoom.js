@@ -15,25 +15,25 @@ function WaitingRoom({ pin, socket }) {
   return (
     <div className={styles["waiting-room"]}>
       <h1 className={styles["title"]}>
-        {isLanguageEnglish ? "Waiting room" : "Poczekalnia"}
+        {isLanguageEnglish ? "Waiting room" : "Kutish rejimida"}
       </h1>
       <h2 className={styles["header"]}>
         {isLanguageEnglish
           ? "Show PIN to your Talabas"
-          : "Pokaż pin swoim uczniom"}
+          : "Ishtirokchi uchun PIN"}
         : {pin}
       </h2>
       <div className={styles["players-list"]}>
         <div className={styles["leaderboard"]}>
           <h1 className={styles["leaderboard-title"]}>
-            {isLanguageEnglish ? "Player List" : "Lista graczy"}
+            {isLanguageEnglish ? "Player List" : "Ishtorkchilar ro`yhati"}
           </h1>
           {playerList.length > 0 ? (
             <ol>
               {playerList.map((player) => (
                 <li>
                   <mark>{player.userName}</mark>
-                  <small>{isLanguageEnglish ? "Talaba" : "Uczeń"}</small>
+                  <small>{isLanguageEnglish ? "Student" : "Talaba"}</small>
                 </li>
               ))}
             </ol>
@@ -41,7 +41,7 @@ function WaitingRoom({ pin, socket }) {
             <h1 className={styles["leaderboard-title"]}>
               {isLanguageEnglish
                 ? "No players yet"
-                : "Na razie nikt nie dołączył"}
+                : "Hali ishtorkchilar yo`q"}
             </h1>
           )}
         </div>

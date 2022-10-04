@@ -45,7 +45,7 @@ function Navbar() {
               </Link>
             </li>
             <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "About" : "Biz haqimizda"}
+              {isLanguageEnglish ? "About" : "Haqida"}
             </li>
             <li className={styles["nav__list-item"]}>
               {isLanguageEnglish ? "Study" : "Testlar"}
@@ -55,7 +55,11 @@ function Navbar() {
                     {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
                   </Link>
                 </li>
-                <li>{isLanguageEnglish ? "Test game" : "Test o`yini"}</li>
+                <li>
+                  <Link to="/games/joingame">
+                    {isLanguageEnglish ? "Test game" : "Test o`yini"}
+                  </Link>
+                </li>
               </ul>
             </li>
           </ul>
@@ -64,11 +68,11 @@ function Navbar() {
           <ul className={styles.nav__list}>
             {user ? (
               <>
-                {/* <li className={styles["nav__list-item"]}>
+                <li className={styles["nav__list-item"]}>
                   <Link to="/games/joingame">
                     {isLanguageEnglish ? "Play" : "O`yin"}
                   </Link>
-                </li> */}
+                </li>
                 {user.result.userType === "Ustoz" && (
                   <li className={styles["nav__list-item"]}>
                     <Link to="/myquizes">

@@ -1,60 +1,60 @@
-import React, { useState } from "react"
-import Quiz from "./Quiz/Quiz"
-import { useDispatch, useSelector } from "react-redux"
-import { useHistory, useLocation } from "react-router-dom"
-import styles from "./quizes.module.css"
-import ChipInput from "material-ui-chip-input"
+import React, { useState } from "react";
+import Quiz from "./Quiz/Quiz";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
+import styles from "./quizes.module.css";
+import ChipInput from "material-ui-chip-input";
 import {
   AppBar,
   TextField,
   Button,
   Paper,
   CircularProgress,
-} from "@material-ui/core"
-import useStyles from "./styles"
-import { getQuizesBySearch } from "../../actions/quiz"
-import Pagination from "../Pagination/Pagination"
+} from "@material-ui/core";
+import useStyles from "./styles";
+import { getQuizesBySearch } from "../../actions/quiz";
+import Pagination from "../Pagination/Pagination";
 
 function useQuery() {
-  return new URLSearchParams(useLocation().search)
+  return new URLSearchParams(useLocation().search);
 }
 
 function Quizes() {
-  const classes = useStyles()
-  const dispatch = useDispatch()
-  const history = useHistory()
-  const { quizes, isLoading } = useSelector((state) => state.quiz)
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const classes = useStyles();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { quizes, isLoading } = useSelector((state) => state.quiz);
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
 
-  const query = useQuery()
-  const page = query.get("page") || 1
-  const searchQuery = query.get("searchQuery")
+  const query = useQuery();
+  const page = query.get("page") || 1;
+  const searchQuery = query.get("searchQuery");
 
-  const [search, setSearch] = useState("")
-  const [tags, setTags] = useState([])
+  const [search, setSearch] = useState("");
+  const [tags, setTags] = useState([]);
 
   const searchPost = () => {
     if (search.trim() !== "" || tags.length !== 0) {
-      console.log(search.trim())
-      dispatch(getQuizesBySearch({ search, tags: tags.join(",") }))
+      console.log(search.trim());
+      dispatch(getQuizesBySearch({ search, tags: tags.join(",") }));
       history.push(
         `/quizes/search?searchQuery=${search || "none"}&tags=${tags.join(",")}`
-      )
+      );
     } else {
-      history.push("/quizes")
+      history.push("/quizes");
     }
-  }
+  };
 
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
-      searchPost()
+      searchPost();
     }
-  }
+  };
 
-  const handleAddChip = (tag) => setTags([...tags, tag])
+  const handleAddChip = (tag) => setTags([...tags, tag]);
 
   const handleDeleteChip = (chipToDelete) =>
-    setTags(tags.filter((tag) => tag !== chipToDelete))
+    setTags(tags.filter((tag) => tag !== chipToDelete));
 
   return (
     <div className={styles["quizes-list"]}>
@@ -70,7 +70,7 @@ function Quizes() {
           label={
             isLanguageEnglish
               ? "Search quizes by name"
-              : "Szukaj quizów po nazwie"
+              : "Test nomi bilan qidirish"
           }
           fullWidth
           value={search}
@@ -84,7 +84,7 @@ function Quizes() {
           label={
             isLanguageEnglish
               ? "Search quizes by tags"
-              : "Szukaj quizów po kategoriach"
+              : "Tag nomi bilan qidirish"
           }
           variant="outlined"
         />
@@ -94,7 +94,7 @@ function Quizes() {
           variant="contained"
           color="primary"
         >
-          {isLanguageEnglish ? "Search" : "Szukaj"}
+          {isLanguageEnglish ? "Search" : "Qidirish"}
         </Button>
       </AppBar>
       {isLoading ? (
@@ -108,7 +108,7 @@ function Quizes() {
         </Paper>
       )}
     </div>
-  )
+  );
 }
 
-export default Quizes
+export default Quizes;

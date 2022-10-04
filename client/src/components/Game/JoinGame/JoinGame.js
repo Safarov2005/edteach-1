@@ -54,25 +54,25 @@ function JoinGame() {
     <div className={styles.page}>
       {!isPlayerAdded ? (
         <div className={styles.section}>
-          <h2>{isLanguageEnglish ? "Join game" : "Dołącz do gry"}</h2>
+          <h2>{isLanguageEnglish ? "Join game" : "O`yinga qo`shilish"}</h2>
           <input
             type="text"
             ref={pinRef}
             placeholder={
-              isLanguageEnglish ? "Write here a pin" : "Wpisz tutaj pin"
+              isLanguageEnglish ? "Write here a pin" : "PIN"
             }
           />
           <button onClick={joinGame}>
-            {isLanguageEnglish ? "Send" : "Wyślij"}
+            {isLanguageEnglish ? "Send" : "Jo`natmoq"}
           </button>
         </div>
       ) : (
         <div className={styles.section}>
           <h2>
-            {isLanguageEnglish ? "You joined the game" : "Dołączyłeś do gry"}
+            {isLanguageEnglish ? "You joined the game" : "Siz o`yinga qo`shildingiz"}
           </h2>
           <h4>
-            {isLanguageEnglish ? "Waiting on a host to start the game" : "Zaczekaj na rozpoczęcie gry przez hosta"}
+            {isLanguageEnglish ? "Waiting on a host to start the game" : "Jamoadoshlar qo`shilishini biroz kuting"}
           </h4>
           <CircularProgress />
         </div>

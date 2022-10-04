@@ -54,7 +54,7 @@ function MyQuizes() {
             type="text"
             name="name"
             onChange={handleQuizChange}
-            placeholder="Misol: Ona tili"
+            placeholder={isLanguageEnglish ? "Example:" : "Misol: Ona tili"}
           />
           <div className={styles["option-label"]}>
             <label>{isLanguageEnglish ? "Description" : "Qo`shimcha tag"}</label>
@@ -64,7 +64,7 @@ function MyQuizes() {
             type="text"
             name="description"
             onChange={handleQuizChange}
-            placeholder="Misol: Hozirgi zamon mavzusiga oid"
+            placeholder={isLanguageEnglish ? "Example:" : "Misol: Hozirgi zamon mavzusiga oid"}
           />
           <div className={styles["option-buttons"]}>
             <button
@@ -100,7 +100,7 @@ function MyQuizes() {
           >
             {isLanguageEnglish
               ? "Create new quiz"
-              : "testni yaratiash"}
+              : "Testni yaratiash"}
           </button>
         </div>
       </div>

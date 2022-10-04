@@ -21,7 +21,7 @@ function Home() {
                 {isLanguageEnglish ? "Make learning awesome" : "Oson o`rganing"}
               </h2>
               <button className={styles["banner-button"]}>
-                <Link to="/auth">
+                <Link to="/auth" >
                   {isLanguageEnglish
                     ? "Sign up for free"
                     : "Bepul ro`yhatdan o`ting"}
@@ -36,11 +36,9 @@ function Home() {
                 {isLanguageEnglish ? "Explore content" : "Testlarga o`tish"}
               </h2>
               <button className={styles["banner-button"]}>
-                <a href="/">
-                  {isLanguageEnglish
-                    ? "Check public quizes"
-                    : "Ommaviy testlar"}
-                </a>
+                <Link to="/quizes">
+                  {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
+                </Link>
               </button>
             </div>
             <img src={img2} alt="" className={styles["banner-image"]} />
