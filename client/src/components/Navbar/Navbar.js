@@ -55,7 +55,11 @@ function Navbar() {
                     {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
                   </Link>
                 </li>
-                <li>{isLanguageEnglish ? "Test game" : "Test o`yini"}</li>
+                <li>
+                  <Link to="/games/joingame">
+                    {isLanguageEnglish ? "Test game" : "Test o`yini"}
+                  </Link>
+                </li>
               </ul>
             </li>
           </ul>

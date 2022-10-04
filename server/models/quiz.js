@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const quizSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
@@ -73,6 +73,6 @@ const quizSchema = new mongoose.Schema({
       ],
     },
   ],
-})
+});
 
-module.exports = mongoose.model("Quiz", quizSchema)
+module.exports = mongoose.model("Quiz", quizSchema);

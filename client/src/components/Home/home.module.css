@@ -175,7 +175,7 @@ main .page {
   line-height: 1.8;
   background-color: #0542b9;
   border-radius: 0.25 rem;
-  width: 40%;
+  width: fit-content;
   margin: auto;
   margin-top: 3rem;
   text-align: center;
