@@ -11,12 +11,22 @@ import { useSelector } from "react-redux";
 function Home() {
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
 
+  const scroll_cards_data = [
+    {
+      title: "Best trips to play with your best friends",
+      img: "https://www.lendkey.com/wp-content/uploads/2021/05/croppedright-scaled.jpg",
+    },
+    {
+      title: "Best trips to play with your best friends",
+      img: "https://cdn.vox-cdn.com/thumbor/O8KNsY3Vz2jGdgjaT7w9rFqOStQ=/0x0:1680x945/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/55398781/Zella_Apartments_01_.0.jpg",
+    },
+  ];
+
   return (
     <main className={styles.page}>
-      <h1 className="text-3xl font-bold underline text-red-400">Hello world!</h1>
       <section className={styles["page-section"]}>
-        <section className={styles["first-section"]}>
-          <div className={styles.banner}>
+        <section className="my-10 md:my-16 lg:my-20">
+          {/* <div className={styles.banner}>
             <div className={styles["banner-body"]}>
               <h2 className={styles["banner-title"]}>
                 {isLanguageEnglish ? "Make learning awesome" : "Oson o`rganing"}
@@ -43,7 +53,61 @@ function Home() {
               </button>
             </div>
             <img src={img2} alt="" className={styles["banner-image"]} />
-          </div>
+          </div> */}
+          <ul className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 justify-items-center w-fit px-10 md:px-0">
+            <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+              <div className="relative flex-shrink-0 w-full">
+                <img
+                  src="https://blog.cambridgecoaching.com/hs-fs/hubfs/studying-1.jpg?width=1365&name=studying-1.jpg"
+                  className="absolute rounded-3xl inset-0 w-full h-full object-cover object-center"
+                  alt="project images"
+                />
+                <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
+                <div className="relative h-64 md:h-96 w-[768px] p-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
+                  <div>
+                    <p className="text-lg md:text-2xl font-medium text-white"></p>
+                    <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                      {isLanguageEnglish
+                        ? "Make learning awesome"
+                        : "Biz bilan oson o`rganing!"}
+                    </h2>
+                  </div>
+                  <Link to="/auth">
+                    <a className="px-4 py-3 rounded-lg bg-white hover:bg-slate-100 active:bg-slate-300 ring-2 ring-gray-300 text-state-900 text-xs md:text-sm font-medium">
+                      {isLanguageEnglish
+                        ? "Sign up for free"
+                        : "Bepul ro`yhatdan o`ting"}
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </li>
+            <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+              <div className="relative flex-shrink-0 w-full">
+                <img
+                  src="https://www.edgeip.com/images/FCK/Image/201812/Applying-to-university-college.jpg"
+                  className="absolute rounded-3xl inset-0 w-full h-full object-cover object-center"
+                  alt="project images"
+                />
+                <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
+                <div className="relative h-64 md:h-96 w-[768px] p-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
+                  <div>
+                    <p className="text-lg md:text-2xl font-medium text-white"></p>
+                    <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                      {isLanguageEnglish
+                        ? "Explore to public test"
+                        : "Ommaviy bo`lgan barcha testlarga ega bo`ling."}
+                    </h2>
+                  </div>
+                  <Link to="/quizes">
+                    <a className="px-4 py-3 rounded-lg bg-white hover:bg-slate-100 active:bg-slate-300 ring-2 ring-gray-300 text-state-900 text-xs md:text-sm font-medium">
+                      {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </li>
+          </ul>
         </section>
         <section className={styles["second-section"]}>
           <div className={styles["section-background"]}></div>
