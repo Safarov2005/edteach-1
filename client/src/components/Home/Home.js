@@ -13,6 +13,7 @@ function Home() {
 
   return (
     <main className={styles.page}>
+      <h1 className="text-3xl font-bold underline text-red-400">Hello world!</h1>
       <section className={styles["page-section"]}>
         <section className={styles["first-section"]}>
           <div className={styles.banner}>
@@ -21,7 +22,7 @@ function Home() {
                 {isLanguageEnglish ? "Make learning awesome" : "Oson o`rganing"}
               </h2>
               <button className={styles["banner-button"]}>
-                <Link to="/auth" >
+                <Link to="/auth">
                   {isLanguageEnglish
                     ? "Sign up for free"
                     : "Bepul ro`yhatdan o`ting"}
