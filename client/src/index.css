@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Gradient text animation */
+.animation_gradient_text {
+    background: linear-gradient(-45deg, #000, #de6325, #000, #15d335, #000, #8219d3);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 8s ease-in-out infinite;
+    -moz-animation: animated_text 10s ease-in-out infinite;
+    -webkit-animation: animated_text 10s ease-in-out infinite;
+  }
+  
+  .animation_gradient_text_colorful {
+    background: linear-gradient(-45deg, #ff6f69, #ffcc5c, #88d8b0, #8b9dc3);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 8s ease-in-out infinite;
+    -moz-animation: animated_text 10s ease-in-out infinite;
+    -webkit-animation: animated_text 10s ease-in-out infinite;
+  }
+  
+  @keyframes animated_text {
+    0% {
+      background-position: 0px 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0px 50%;
+    }
+  }

@@ -7,54 +7,17 @@ import img4 from "../../assets/img4.svg";
 import img5 from "../../assets/img5.svg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Header from "../Header/Header";
 
 function Home() {
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
 
-  const scroll_cards_data = [
-    {
-      title: "Best trips to play with your best friends",
-      img: "https://www.lendkey.com/wp-content/uploads/2021/05/croppedright-scaled.jpg",
-    },
-    {
-      title: "Best trips to play with your best friends",
-      img: "https://cdn.vox-cdn.com/thumbor/O8KNsY3Vz2jGdgjaT7w9rFqOStQ=/0x0:1680x945/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/55398781/Zella_Apartments_01_.0.jpg",
-    },
-  ];
-
   return (
     <main className={styles.page}>
+      <Header />
       <section className={styles["page-section"]}>
         <section className="my-10 md:my-16 lg:my-20">
-          {/* <div className={styles.banner}>
-            <div className={styles["banner-body"]}>
-              <h2 className={styles["banner-title"]}>
-                {isLanguageEnglish ? "Make learning awesome" : "Oson o`rganing"}
-              </h2>
-              <button className={styles["banner-button"]}>
-                <Link to="/auth">
-                  {isLanguageEnglish
-                    ? "Sign up for free"
-                    : "Bepul ro`yhatdan o`ting"}
-                </Link>
-              </button>
-            </div>
-            <img src={img1} alt="" className={styles["banner-image"]} />
-          </div>
-          <div className={styles.banner}>
-            <div className={styles["banner-body"]}>
-              <h2 className={styles["banner-title"]}>
-                {isLanguageEnglish ? "Explore content" : "Testlarga o`tish"}
-              </h2>
-              <button className={styles["banner-button"]}>
-                <Link to="/quizes">
-                  {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
-                </Link>
-              </button>
-            </div>
-            <img src={img2} alt="" className={styles["banner-image"]} />
-          </div> */}
-          <ul className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 justify-items-center w-fit px-10 md:px-0">
+          <ul className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 justify-items-center w-fit px-5 md:px-0">
             <li className="snap-center w-full md:w-[35vw] rounded-3xl">
               <div className="relative flex-shrink-0 w-full">
                 <img
@@ -63,7 +26,7 @@ function Home() {
                   alt="project images"
                 />
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
-                <div className="relative h-64 md:h-96 w-[768px] p-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
+                <div className="relative h-64 md:h-96 w-full py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
                   <div>
                     <p className="text-lg md:text-2xl font-medium text-white"></p>
                     <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
@@ -90,7 +53,7 @@ function Home() {
                   alt="project images"
                 />
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
-                <div className="relative h-64 md:h-96 w-[768px] p-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
+                <div className="relative h-64 md:h-96 w-full py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
                   <div>
                     <p className="text-lg md:text-2xl font-medium text-white"></p>
                     <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
@@ -109,107 +72,89 @@ function Home() {
             </li>
           </ul>
         </section>
-        <section className={styles["second-section"]}>
-          <div className={styles["section-background"]}></div>
-          <div className={styles.info}>
-            <div className={styles["info-body"]}>
-              <h2 className={styles["info-title"]}>
-                {isLanguageEnglish ? "Quizzly at school" : "Quizzly w szkole"}
-              </h2>
-              <p className={styles["info-description"]}>
-                {isLanguageEnglish
-                  ? "Engaging group and distance learning for Ustozs and Talabas."
-                  : "Angażująca nauka grupowa i na odległość dla nauczycieli i uczniów."}
-              </p>
-              <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Ko`proq ma`lumot."} &gt;
-              </a>
-            </div>
-          </div>
-          <div className={styles.info}>
-            <div className={styles["info-body"]}>
-              <h2 className={styles["info-title"]}>
-                {isLanguageEnglish ? "Quizzly at work" : "Quizzly w pracy"}
-              </h2>
-              <p className={styles["info-description"]}>
-                {isLanguageEnglish
-                  ? "Deliver training, presentations, meetings and events in-person or on any video conferencing platform."
-                  : "Realizuj szkolenia, prezentacje, spotkania i wydarzenia osobiście lub na dowolnej platformie do wideokonferencji."}
-              </p>
-              <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Ko`proq ma`lumot."} &gt;
-              </a>
-            </div>
-          </div>
-          <div className={styles.info}>
-            <div className={styles["info-body"]}>
-              <h2 className={styles["info-title"]}>
-                {isLanguageEnglish ? "Quizzly at home" : "Quizzly w domu"}
-              </h2>
-              <p className={styles["info-description"]}>
-                {isLanguageEnglish
-                  ? "Learning Apps and games for family fun or home study."
-                  : "Gry edukacyjne do rodzinnej zabawy lub nauki w domu."}
-              </p>
-              <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Ko`proq ma`lumot."} &gt;
-              </a>
-            </div>
-          </div>
-        </section>
-        <section className={styles["third-section"]}>
-          <h1>
-            {isLanguageEnglish
-              ? "How does Quizzly work?"
-              : "Sayt qanday ishlaydi?"}
+        <section className="">
+          <h1 className="text-xl md:text-2xl lg:text-3xl text-center font-semibold uppercase my-10">
+            {isLanguageEnglish ? "How it works" : "Sayt qanday ishlaydi"}
           </h1>
-          <div className={styles["card-container"]}>
-            <div className={styles.card}>
-              <img src={img3} alt="" />
-              <div className={styles["card-body"]}>
-                <h1>{isLanguageEnglish ? "Create" : "Testni yarating."}</h1>
-                <p>
-                  {isLanguageEnglish
-                    ? "It only takes minutes to create a learning game or trivia quiz on any topic, in any language."
-                    : "Stworzenie quizu na dowolny temat, w dowolnym języku zajmuje tylko kilka minut."}
-                </p>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 justify-items-center w-fit px-20 md:px-0">
+            <div className="relative my-5 w-[90vw] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
+              <div className="relative w-full rounded-xl">
+                <img
+                  className="rounded-xl object-cover object-top h-auto"
+                  src="https://media.baamboozle.com/uploads/images/227903/1609388408_235498"
+                  alt="card image"
+                />
+                <div className="absolute top-3 left-4 flex items-center space-x-2 cursor-pointer">
+                  <span className="w-8 h-8 rounded-lg bg-white flex items-center justify-center  duration-200 space-x-1 hover:-translate-y-1">
+                    <small className="text-blue-500">1</small>
+                  </span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 rounded-b-xl w-full h-20 bg-white p-4 group-hover:h-24 duration-300">
+                <h5 className="text-primary font-medium lg:font-semibold text-lg lg:text-left">
+                  Testni yarating.
+                </h5>
+                <small className="text-xs font-light text-primary">
+                  Testni yaratish uchun text
+                </small>
               </div>
             </div>
-            <div className={styles.card}>
-              <img src={img4} alt="" />
-              <div className={styles["card-body"]}>
-                <h1>
-                  {isLanguageEnglish ? "Host or share" : "Yuklang va ulashing."}
-                </h1>
-                <p>
-                  {isLanguageEnglish
-                    ? "Host a live game with questions on a big screen or share a game with remote players."
-                    : "Przeprowadź grę na żywo z pytaniami na dużym ekranie lub udostępnij gra ze zdalnymi graczami."}
-                </p>
+            <div className="relative my-5 w-[90vw] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
+              <div className="relative w-full rounded-xl">
+                <img
+                  className="rounded-xl object-cover object-top h-auto"
+                  src="https://static.foxnews.com/foxnews.com/content/uploads/2018/09/istock_000019850227_medium.jpg"
+                  alt="card image"
+                />
+                <div className="absolute top-3 left-4 flex items-center space-x-2 cursor-pointer">
+                  <span className="w-8 h-8 rounded-lg bg-white flex items-center justify-center  duration-200 space-x-1 hover:-translate-y-1">
+                    <small className="text-blue-500">2</small>
+                  </span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 rounded-b-xl w-full h-20 bg-white p-4 group-hover:h-24 duration-300">
+                <h5 className="text-primary font-medium lg:font-semibold text-lg lg:text-left">
+                  Yuklang va ulashing.
+                </h5>
+                <small className="text-xs font-light text-primary">
+                  Yuklash boyicha yiriq noma
+                </small>
               </div>
             </div>
-            <div className={styles.card}>
-              <img src={img5} alt="" />
-              <div className={styles["card-body"]}>
-                <h1>{isLanguageEnglish ? "Play" : "O`yin"}</h1>
-                <p>
-                  {isLanguageEnglish
-                    ? "Game on! Join a kahoot with a PIN provided by the host and answer questions on your device."
-                    : "O`yin dalej! Dołącz do kahoot za pomocą kodu PIN dostarczonego przez gospodarza i odpowiadać na pytania na swoim urządzeniu."}
-                </p>
+            <div className="relative my-5 w-[90vw] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
+              <div className="relative w-full rounded-xl">
+                <img
+                  className="rounded-xl object-cover object-top h-auto"
+                  src="https://vapingdaily.com/wp-content/uploads/2017/05/Quit-Smoking-E-mails-2.jpg"
+                  alt="card image"
+                />
+                <div className="absolute top-3 left-4 flex items-center space-x-2 cursor-pointer">
+                  <span className="w-8 h-8 rounded-lg bg-white flex items-center justify-center  duration-200 space-x-1 hover:-translate-y-1">
+                    <small className="text-blue-500">3</small>
+                  </span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 rounded-b-xl w-full h-20 bg-white p-4 group-hover:h-24 duration-300">
+                <h5 className="text-primary font-medium lg:font-semibold text-lg lg:text-left">
+                  Testni boshlash.
+                </h5>
+                <small className="text-xs font-light text-primary">
+                  Do you want to participate?
+                </small>
               </div>
             </div>
           </div>
-          <div className={styles["card-button"]}>
-            {isLanguageEnglish
-              ? "Play Quizzly to see how it works."
-              : "Testlarni yechib buni qanday ishlashini bilib oling."}{" "}
-            &nbsp;
-            <a href="/">
-              {isLanguageEnglish
-                ? "Explore our public quizes"
-                : "Bizning ommaviy testlarimizga o`ting"}
-            </a>
+          <div className="flex items-center justify-center my-10 md:my-16 space-x-4 md:space-x-10">
+            <h3 className="text-primary font-medium lg:font-semibold text-lg lg:text-left">
+              {isLanguageEnglish ? "Start right now" : "Hoziroq boshlang"}
+            </h3>
+            <Link to="/auth">
+              <a className="px-4 py-3 rounded-lg bg-white hover:bg-slate-100 active:bg-slate-300 ring-2 ring-gray-300 text-state-900 text-xs md:text-sm font-medium">
+                {isLanguageEnglish
+                  ? "Sign up for free"
+                  : "Bepul ro`yhatdan o`ting"}
+              </a>
+            </Link>
           </div>
         </section>
       </section>
