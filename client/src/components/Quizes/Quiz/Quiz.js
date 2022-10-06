@@ -29,7 +29,9 @@ function Quiz({ quiz }) {
             ? `${quiz.likesCount.length} like${
                 quiz.likesCount.length > 1 ? "s" : ""
               }`
-            : `${quiz.likesCount.length} osób polubiło`}
+            : `${quiz.likesCount.length} like${
+              quiz.likesCount.length > 1 ? "lar" : ""
+            }`}
         </>
       ) : (
         <>

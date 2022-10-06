@@ -53,111 +53,117 @@ function Auth() {
     setShowPassword(false);
   };
   return (
-    <Container component="main" maxWidth="xs">
-      <Paper className={classes.paper} elevation={3}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          {isSignup
-            ? isLanguageEnglish
-              ? "Sign up"
-              : "Ro`yhatdan o`tmoq"
-            : isLanguageEnglish
-            ? "Sign in"
-            : "Kirish"}
-        </Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            {isSignup && (
-              <>
-                <Input
-                  name="firstName"
-                  label={isLanguageEnglish ? "First Name" : "Ism"}
-                  handleChange={handleChange}
-                  autoFocus
-                  half
-                />
-                <Input
-                  name="lastName"
-                  label={isLanguageEnglish ? "Last Name" : "Familiya"}
-                  handleChange={handleChange}
-                  half
-                />
-                <Input
-                  name="userType"
-                  label={
-                    isLanguageEnglish
-                      ? "User type"
-                      : "Ustoz yoki Talaba: Bosh harf bilan yozing!"
-                  }
-                  handleChange={handleChange}
-                />
-                <Input
-                  name="mail"
-                  label={isLanguageEnglish ? "Email address" : "Email manzil"}
-                  handleChange={handleChange}
-                  type="email"
-                />
-              </>
-            )}
-
-            <Input
-              name="userName"
-              label={isLanguageEnglish ? "User Name" : "Foydalanuvchi nomi. Maxsimal 5ta belgi"}
-              handleChange={handleChange}
-            />
-            <Input
-              name="password"
-              label={isLanguageEnglish ? "Password" : "Maxfiy parol"}
-              handleChange={handleChange}
-              type={showPassword ? "text" : "password"}
-              handleShowPassword={handleShowPassword}
-            />
-            {isSignup && (
-              <Input
-                name="confirmPassword"
-                label={
-                  isLanguageEnglish
-                    ? "Repeat password"
-                    : "Maxfiy parol qayta tering!"
-                }
-                handleChange={handleChange}
-                type="password"
-              />
-            )}
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
+    <div className="h-screen flex items-center justify-center">
+      <Container component="main" maxWidth="xs">
+        <Paper className={classes.paper} elevation={3}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
             {isSignup
               ? isLanguageEnglish
                 ? "Sign up"
-                : "Ro`yhatdan o`ting"
+                : "Ro`yhatdan o`tmoq"
               : isLanguageEnglish
               ? "Sign in"
               : "Kirish"}
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Button onClick={switchMode}>
-                {isSignup
-                  ? isLanguageEnglish
-                    ? "Already have an account? Sign in"
-                    : "Allaqachon hiobingiz bormi? Kirish"
-                  : isLanguageEnglish
-                  ? "Don't have an account? Sign Up"
-                  : "Hisobingiz bo`lmasa, Ro`yhatdan o`tish."}
-              </Button>
+          </Typography>
+          <form className={classes.form} onSubmit={handleSubmit}>
+            <Grid container spacing={2}>
+              {isSignup && (
+                <>
+                  <Input
+                    name="firstName"
+                    label={isLanguageEnglish ? "First Name" : "Ism"}
+                    handleChange={handleChange}
+                    autoFocus
+                    half
+                  />
+                  <Input
+                    name="lastName"
+                    label={isLanguageEnglish ? "Last Name" : "Familiya"}
+                    handleChange={handleChange}
+                    half
+                  />
+                  <Input
+                    name="userType"
+                    label={
+                      isLanguageEnglish
+                        ? "User type"
+                        : "Ustoz yoki Talaba: Bosh harf bilan yozing!"
+                    }
+                    handleChange={handleChange}
+                  />
+                  <Input
+                    name="mail"
+                    label={isLanguageEnglish ? "Email address" : "Email manzil"}
+                    handleChange={handleChange}
+                    type="email"
+                  />
+                </>
+              )}
+
+              <Input
+                name="userName"
+                label={
+                  isLanguageEnglish
+                    ? "User Name"
+                    : "Foydalanuvchi nomi. Maxsimal 5ta belgi"
+                }
+                handleChange={handleChange}
+              />
+              <Input
+                name="password"
+                label={isLanguageEnglish ? "Password" : "Maxfiy parol"}
+                handleChange={handleChange}
+                type={showPassword ? "text" : "password"}
+                handleShowPassword={handleShowPassword}
+              />
+              {isSignup && (
+                <Input
+                  name="confirmPassword"
+                  label={
+                    isLanguageEnglish
+                      ? "Repeat password"
+                      : "Maxfiy parol qayta tering!"
+                  }
+                  handleChange={handleChange}
+                  type="password"
+                />
+              )}
             </Grid>
-          </Grid>
-        </form>
-      </Paper>
-    </Container>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              {isSignup
+                ? isLanguageEnglish
+                  ? "Sign up"
+                  : "Ro`yhatdan o`ting"
+                : isLanguageEnglish
+                ? "Sign in"
+                : "Kirish"}
+            </Button>
+            <Grid container justify="flex-end">
+              <Grid item>
+                <Button onClick={switchMode}>
+                  {isSignup
+                    ? isLanguageEnglish
+                      ? "Already have an account? Sign in"
+                      : "Allaqachon hiobingiz bormi? Kirish"
+                    : isLanguageEnglish
+                    ? "Don't have an account? Sign Up"
+                    : "Hisobingiz bo`lmasa, Ro`yhatdan o`tish."}
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+        </Paper>
+      </Container>
+    </div>
   );
 }
 

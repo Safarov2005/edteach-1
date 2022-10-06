@@ -9,7 +9,7 @@ const Header = () => {
     <div class="px-5 mx-auto max-w-7xl">
         <div class="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
             <h1 class="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
-                <span>Bilimingizni</span> <span class="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">Quizzzy</span> <span>bilan sinashni istaysizmi?</span>
+                <span>Bilimingizni</span> <span class="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">EtTeach</span> <span>bilan sinashni istaysizmi?</span>
             </h1>
             <p class="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
                 Agar javobingiz ha bo`lsa hoziroq bepul ro`yhatdan o`ting va bilimingizni sinab ko`ring. Barchasi bepul!
