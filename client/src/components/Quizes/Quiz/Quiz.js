@@ -29,13 +29,9 @@ function Quiz({ quiz }) {
             ? `${quiz.likesCount.length} yoqdi${
                 quiz.likesCount.length > 1 ? "lar" : ""
               }`
-<<<<<<< HEAD
             : `${quiz.likesCount.length} like${
               quiz.likesCount.length > 1 ? "lar" : ""
             }`}
-=======
-            : `${quiz.likesCount.length} ta yoqdi`}
->>>>>>> e7ae719de7fb917260dca152e25d73be965be180
         </>
       ) : (
         <>
