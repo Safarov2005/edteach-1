@@ -14,6 +14,7 @@ import JoinGame from "./components/Game/JoinGame/JoinGame"
 import { io } from "socket.io-client"
 import { useDispatch } from "react-redux"
 import { createSocket } from "./actions/socket"
+import Navbarr from "./components/Navbar/Navbarr"
 
 function App() {
   const user = JSON.parse(localStorage.getItem("profile"))
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbarr />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/auth" exact component={() => (user === null ? <Auth /> : <Redirect to="/" />)} />

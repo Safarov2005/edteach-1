@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:1000",
   "dependencies": {
+    "@material-tailwind/react": "^1.2.4",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
@@ -19,7 +20,7 @@
     "react-file-base64": "^1.0.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "redux": "^4.1.1",
     "redux-thunk": "^2.4.0",
     "socket.io-client": "^4.4.1",
@@ -48,5 +49,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
   }
 }
