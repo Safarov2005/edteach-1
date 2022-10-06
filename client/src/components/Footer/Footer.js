@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 function Footer() {
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
   return (
+<<<<<<< HEAD
     <div className="px-5 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
@@ -123,20 +124,65 @@ function Footer() {
               href="/"
               className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
             >
+=======
+    <footer className="p-4 bg-[#111817] shadow-xl md:px-6 md:py-8">
+      <div className="sm:flex sm:items-center sm:justify-between">
+        <a href="#" className="flex items-center mb-4 sm:mb-0">
+          <span className="self-center text-white text-2xl font-semibold whitespace-nowrap">
+            Quizzzy
+          </span>
+        </a>
+        <ul className="flex flex-wrap items-center mb-6 text-sm text-white sm:mb-0">
+          <li>
+            <a href="#" className="mr-4 hover:underline md:mr-6">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#" className="mr-4 hover:underline md:mr-6">
+>>>>>>> e7ae719de7fb917260dca152e25d73be965be180
               Privacy Policy
             </a>
           </li>
           <li>
+<<<<<<< HEAD
             <a
               href="/"
               className="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
             >
               Terms &amp; Conditions
+=======
+            <a href="#" className="mr-4 hover:underline md:mr-6 ">
+              Licensing
+            </a>
+          </li>
+          <li>
+            <a href="#" className="hover:underline">
+              Contact
+>>>>>>> e7ae719de7fb917260dca152e25d73be965be180
             </a>
           </li>
         </ul>
       </div>
+<<<<<<< HEAD
     </div>
+=======
+      <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <span className="block text-sm text-gray-50 sm:text-center">
+        © 2022{" "}
+        <a
+          href="https://flowbite.com/"
+          className="hover:underline text-green-500"
+        >
+          Al-jabr™
+        </a>
+        .{" "}
+        {isLanguageEnglish
+          ? "All rights reserved"
+          : "Barcha huquqlar himoyalangan."}
+      </span>
+    </footer>
+>>>>>>> e7ae719de7fb917260dca152e25d73be965be180
   );
 }
 

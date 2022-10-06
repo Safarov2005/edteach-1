@@ -1,49 +1,49 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 import {
   Paper,
   Typography,
   CircularProgress,
   Divider,
-} from "@material-ui/core/"
-import { useDispatch, useSelector } from "react-redux"
-import moment from "moment"
-import { useParams } from "react-router-dom"
-import Quiz from "../Quizes/Quiz/Quiz"
-import Question from "./Question/Question"
-import CommentSection from './CommentSection/CommentSection'
-import { getQuiz, getQuizesBySearch } from "../../actions/quiz"
-import useStyles from "./styles"
+} from "@material-ui/core/";
+import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
+import { useParams } from "react-router-dom";
+import Quiz from "../Quizes/Quiz/Quiz";
+import Question from "./Question/Question";
+import CommentSection from "./CommentSection/CommentSection";
+import { getQuiz, getQuizesBySearch } from "../../actions/quiz";
+import useStyles from "./styles";
 
 const Post = () => {
-  const { quiz, quizes, isLoading } = useSelector((state) => state.quiz)
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
-  const dispatch = useDispatch()
-  const classes = useStyles()
-  const { id } = useParams()
+  const { quiz, quizes, isLoading } = useSelector((state) => state.quiz);
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
+  const dispatch = useDispatch();
+  const classes = useStyles();
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch(getQuiz(id))
-  }, [id])
+    dispatch(getQuiz(id));
+  }, [id]);
 
   useEffect(() => {
     if (quiz) {
       dispatch(
         getQuizesBySearch({ search: "none", tags: quiz?.tags.join(",") })
-      )
+      );
     }
-  }, [quiz])
+  }, [quiz]);
 
-  if (!quiz) return null
+  if (!quiz) return null;
 
   if (isLoading) {
     return (
       <Paper elevation={6} className={classes.loadingPaper}>
         <CircularProgress size="7em" />
       </Paper>
-    )
+    );
   }
 
-  const recommendedQuizes = quizes.filter(({ _id }) => _id !== quiz._id)
+  const recommendedQuizes = quizes.filter(({ _id }) => _id !== quiz._id);
 
   return (
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
@@ -64,7 +64,12 @@ const Post = () => {
             {quiz.description}
           </Typography>
           <Typography variant="h6">
+<<<<<<< HEAD
             {isLanguageEnglish ? "Created by:" : "Yaratuvchi: "}{quiz.creatorName}
+=======
+            {isLanguageEnglish ? "Created by:" : "Tomonidan yaratilgan: "}
+            {quiz.creatorName}
+>>>>>>> e7ae719de7fb917260dca152e25d73be965be180
           </Typography>
           <Typography variant="body1">
             {moment(quiz.dateCreated).fromNow()}
@@ -80,7 +85,11 @@ const Post = () => {
       {quiz.questionList.length > 0 && (
         <div>
           <Typography gutterBottom variant="h5">
+<<<<<<< HEAD
             {isLanguageEnglish ? "Question list:" : "Testlar ro`yhati:"}
+=======
+            {isLanguageEnglish ? "Question list:" : "Savollar ro`yxati:"}
+>>>>>>> e7ae719de7fb917260dca152e25d73be965be180
           </Typography>
           <Divider />
           {quiz.questionList.map((question) => (
@@ -94,7 +103,11 @@ const Post = () => {
           <Typography gutterBottom variant="h5">
             {isLanguageEnglish
               ? "You might also like:"
+<<<<<<< HEAD
               : "Buni ham yoqtirishingiz mumkin:"}
+=======
+              : "Sizga ham yoqishi mumkin:"}
+>>>>>>> e7ae719de7fb917260dca152e25d73be965be180
           </Typography>
           <Divider />
           {recommendedQuizes.map((quiz) => (
@@ -103,7 +116,7 @@ const Post = () => {
         </div>
       )}
     </Paper>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
