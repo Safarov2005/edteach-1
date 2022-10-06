@@ -9,76 +9,47 @@ import { useSelector } from "react-redux";
 function Footer() {
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
   return (
-    <footer className={styles.footer}>
-      <div className={styles["footer-container"]}>
-        <div className={styles["footer-row"]}>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "About" : "Biz haqimizda"}</h4>
-            <ul>
-              <li>
-                <a href="/">{isLanguageEnglish ? "Company" : "Firma"}</a>
-              </li>
-              <li>
-                <a href="/">{isLanguageEnglish ? "Service" : "Usługi"}</a>
-              </li>
-              <li>
-                <a href="/">Blog</a>
-              </li>
-              <li>
-                <a href="/">{isLanguageEnglish ? "Contact" : "Aloqa"}</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Application" : "Aplikacja"}</h4>
-            <ul>
-              <li>
-                <a href="/">{isLanguageEnglish ? "At home" : "W domu"}</a>
-              </li>
-              <li>
-                <a href="/">{isLanguageEnglish ? "At school" : "W szkole"}</a>
-              </li>
-              <li>
-                <a href="/">{isLanguageEnglish ? "At work" : "W pracy"}</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Terms and conditions" : "Regulamin"}</h4>
-            <ul>
-              <li>
-                <a href="/">
-                  {isLanguageEnglish ? "Terms and conditions" : "Regulamin"}
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  {isLanguageEnglish
-                    ? "Privacy Policy"
-                    : "Polityka prywatności"}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Follow us" : "Śledź nas"}</h4>
-            <div className={styles["footer-social-links"]}>
-              <a href="/">
-                <FacebookIcon />
-              </a>
-              <a href="/">
-                <TwitterIcon />
-              </a>
-              <a href="/">
-                <InstagramIcon />
-              </a>
-              <a href="/">
-                <LinkedInIcon />
-              </a>
-            </div>
-          </div>
-        </div>
+    <footer class="p-4 bg-[#111817] shadow-xl md:px-6 md:py-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="#" class="flex items-center mb-4 sm:mb-0">
+          <span class="self-center text-white text-2xl font-semibold whitespace-nowrap">
+            Quizzzy
+          </span>
+        </a>
+        <ul class="flex flex-wrap items-center mb-6 text-sm text-white sm:mb-0">
+          <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6 ">
+              Licensing
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:underline">
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <span class="block text-sm text-gray-50 sm:text-center">
+        © 2022{" "}
+        <a href="https://flowbite.com/" class="hover:underline text-green-500">
+          Al-jabr™
+        </a>
+        .{" "}
+        {isLanguageEnglish
+          ? "All rights reserved"
+          : "Barcha huquqlar himoyalangan."}
+      </span>
     </footer>
   );
 }
