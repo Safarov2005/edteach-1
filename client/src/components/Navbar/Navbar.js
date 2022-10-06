@@ -4,7 +4,8 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import decode from "jwt-decode";
 import * as actionType from "../../constants/actionTypes";
-import globe from "../../assets/globe.svg";
+
+
 
 import { changeLanguage } from "../../actions/language";
 
