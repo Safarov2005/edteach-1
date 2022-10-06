@@ -326,7 +326,7 @@ function QuizCreator() {
           <h3>
             {isLanguageEnglish
               ? "Find and upload an image"
-              : "Rasmni toping va yuklang"}
+              : "Rasmni yuklang"}
           </h3>
           <div>
             <FileBase
@@ -451,7 +451,7 @@ function QuizCreator() {
             onChange={handleQuizChange}
           />
           <div className={styles["option-label"]}>
-            <label>{isLanguageEnglish ? "Description" : "Qo`shimcha taglavha"}</label>
+            <label>{isLanguageEnglish ? "Description" : "Izoh"}</label>
           </div>
           <input
             value={quizData.description}
@@ -524,7 +524,7 @@ function QuizCreator() {
             <label>
               {isLanguageEnglish
                 ? "Tags (comma separated)"
-                : "Tagi (oddzielaj przecinkiem)"}
+                : "Teglar (vergul bilan ajratilgan)"}
             </label>
           </div>
           <input
@@ -566,18 +566,18 @@ function QuizCreator() {
               <option defaultValue disabled>
                 {isLanguageEnglish
                   ? "Select question type"
-                  : "Savol turi"}
+                  : "Savol turini tanlang"}
               </option>
               <option value="Quiz">Quiz</option>
               <option value="True/False">
-                {isLanguageEnglish ? "True/False" : "True/False"}
+                {isLanguageEnglish ? "True/False" : "Rost/Yolg`on"}
               </option>
             </select>
           </div>
           <div className={styles.option}>
             <div className={styles["option-label"]}>
               <img src={timer} alt="" />
-              <label>{isLanguageEnglish ? "Time limit" : "Vaqt oralig`i"}</label>
+              <label>{isLanguageEnglish ? "Time limit" : "Vaqt chegarasi"}</label>
             </div>
             <select
               onChange={handleQuestionChange}
@@ -585,25 +585,25 @@ function QuizCreator() {
               value={questionData.answerTime}
             >
               <option defaultValue disabled>
-                {isLanguageEnglish ? "Set time limit" : "Vaqt oralig`ini o`zgartirish"}
+                {isLanguageEnglish ? "Set time limit" : "Vaqt chegarasini belgilang"}
               </option>
               <option value={5}>
-                5 {isLanguageEnglish ? "seconds" : "sekund"}
+                5 {isLanguageEnglish ? "seconds" : "soniya"}
               </option>
               <option value={10}>
-                10 {isLanguageEnglish ? "seconds" : "sekund"}
+                10 {isLanguageEnglish ? "seconds" : "soniya"}
               </option>
               <option value={20}>
-                20 {isLanguageEnglish ? "seconds" : "sekund"}
+                20 {isLanguageEnglish ? "seconds" : "soniya"}
               </option>
               <option value={30}>
-                30 {isLanguageEnglish ? "seconds" : "sekund"}
+                30 {isLanguageEnglish ? "seconds" : "soniya"}
               </option>
               <option value={60}>
-                1 {isLanguageEnglish ? "minute" : "minut"}
+                1 {isLanguageEnglish ? "minute" : "daqiqa"}
               </option>
               <option value={90}>
-                1,5 {isLanguageEnglish ? "minute" : "minut"}
+                1,5 {isLanguageEnglish ? "minute" : "daqiqa"}
               </option>
             </select>
           </div>
@@ -637,14 +637,14 @@ function QuizCreator() {
             <div className={styles["option-label"]}>
               <img src={answerOptions} alt="" />
               <label>
-                {isLanguageEnglish ? "Answer options" : "Variantlarga javob berish"}
+                {isLanguageEnglish ? "Answer options" : "Javob variantlari"}
               </label>
             </div>
             <select onChange={changeMaxCorrectAnswerCount}>
               <option defaultValue disabled value="1">
                 {isLanguageEnglish
                   ? "Set answer options"
-                  : "Wybierz opcje odpowiedzi"}
+                  : "Javob variantlarini belgilang"}
               </option>
               <option value="1">
                 {isLanguageEnglish ? "Single choice" : "Yagona tanlov"}

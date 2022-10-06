@@ -19,7 +19,7 @@ function Footer() {
                 <a href="/">{isLanguageEnglish ? "Company" : "Firma"}</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "Service" : "Usługi"}</a>
+                <a href="/">{isLanguageEnglish ? "Service" : "Hizmatlar"}</a>
               </li>
               <li>
                 <a href="/">Blog</a>
@@ -30,38 +30,38 @@ function Footer() {
             </ul>
           </div>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Application" : "Aplikacja"}</h4>
+            <h4>{isLanguageEnglish ? "Application" : "Ilova"}</h4>
             <ul>
               <li>
-                <a href="/">{isLanguageEnglish ? "At home" : "W domu"}</a>
+                <a href="/">{isLanguageEnglish ? "At home" : "Uyda"}</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "At school" : "W szkole"}</a>
+                <a href="/">{isLanguageEnglish ? "At school" : "Maktabda"}</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "At work" : "W pracy"}</a>
+                <a href="/">{isLanguageEnglish ? "At work" : "Ishda"}</a>
               </li>
             </ul>
           </div>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Terms and conditions" : "Regulamin"}</h4>
+            <h4>{isLanguageEnglish ? "Terms and conditions" : "Foydalanish shartlari"}</h4>
             <ul>
               <li>
                 <a href="/">
-                  {isLanguageEnglish ? "Terms and conditions" : "Regulamin"}
+                  {isLanguageEnglish ? "Terms and conditions" : "Foydalanish shartlari"}
                 </a>
               </li>
               <li>
                 <a href="/">
                   {isLanguageEnglish
                     ? "Privacy Policy"
-                    : "Polityka prywatności"}
+                    : "Maxfiylik siyosati"}
                 </a>
               </li>
             </ul>
           </div>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Follow us" : "Śledź nas"}</h4>
+            <h4>{isLanguageEnglish ? "Follow us" : "Bizni kuzatib boring"}</h4>
             <div className={styles["footer-social-links"]}>
               <a href="/">
                 <FacebookIcon />

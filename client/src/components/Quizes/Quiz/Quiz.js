@@ -1,20 +1,20 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import styles from "./quiz.module.css"
-import { likeQuiz } from "../../../actions/quiz"
-import { useHistory } from "react-router-dom"
-import moment from "moment"
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt"
-import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined"
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import styles from "./quiz.module.css";
+import { likeQuiz } from "../../../actions/quiz";
+import { useHistory } from "react-router-dom";
+import moment from "moment";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
 
 function Quiz({ quiz }) {
-  const dispatch = useDispatch()
-  const history = useHistory()
-  const user = JSON.parse(localStorage.getItem("profile"))
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const isLanguageEnglish = useSelector((state) => state.language.isEnglish);
   const openQuizDetailsPage = (e) => {
-    history.push(`/quizes/${quiz._id}`)
-  }
+    history.push(`/quizes/${quiz._id}`);
+  };
   const Likes = () => {
     if (quiz.likesCount.length > 0) {
       return quiz.likesCount.find((like) => like === user?.result?._id) ? (
@@ -24,12 +24,12 @@ function Quiz({ quiz }) {
           {quiz.likesCount.length > 2
             ? isLanguageEnglish
               ? `You and ${quiz.likesCount.length - 1} others`
-              : `Ty i ${quiz.likesCount.length - 1} innych`
+              : `Siz va ${quiz.likesCount.length - 1} boshqalar`
             : isLanguageEnglish
-            ? `${quiz.likesCount.length} like${
-                quiz.likesCount.length > 1 ? "s" : ""
+            ? `${quiz.likesCount.length} yoqdi${
+                quiz.likesCount.length > 1 ? "lar" : ""
               }`
-            : `${quiz.likesCount.length} osób polubiło`}
+            : `${quiz.likesCount.length} ta yoqdi`}
         </>
       ) : (
         <>
@@ -38,20 +38,20 @@ function Quiz({ quiz }) {
           {quiz.likesCount.length === 1
             ? isLanguageEnglish
               ? "Like"
-              : "Polubienie"
+              : "Yoqdi"
             : isLanguageEnglish
             ? "Likes"
-            : "Polubienia"}
+            : "Yoqadi"}
         </>
-      )
+      );
     }
     return (
       <>
         <ThumbUpAltOutlined fontSize="small" />
         &nbsp;Like
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div className={styles["quiz-card"]}>
@@ -66,7 +66,7 @@ function Quiz({ quiz }) {
           style={{ backgroundImage: "url('" + quiz.backgroundImage + "')" }}
         ></div>
         <h3 className={styles["quiz-question-number"]}>
-          {isLanguageEnglish ? "Questions:" : "Pytania:"}{" "}
+          {isLanguageEnglish ? "Questions:" : "Savollar:"}{" "}
           {quiz.numberOfQuestions}
         </h3>
       </div>
@@ -84,7 +84,7 @@ function Quiz({ quiz }) {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Quiz
+export default Quiz;

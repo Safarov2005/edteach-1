@@ -48,7 +48,7 @@ function Navbar() {
               {isLanguageEnglish ? "About" : "Haqida"}
             </li>
             <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "Study" : "Testlar"}
+              {isLanguageEnglish ? "Study" : "O`qish"}
               <ul className={styles["nav__list-item-drop"]}>
                 <li>
                   <Link to="/quizes">
@@ -70,7 +70,7 @@ function Navbar() {
               <>
                 <li className={styles["nav__list-item"]}>
                   <Link to="/games/joingame">
-                    {isLanguageEnglish ? "Play" : "O`yin"}
+                    {isLanguageEnglish ? "Play" : "O`ynang"}
                   </Link>
                 </li>
                 {user.result.userType === "Ustoz" && (

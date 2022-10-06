@@ -30,7 +30,7 @@ const CommentSection = ({ quiz }) => {
       <div className={classes.commentsOuterContainer}>
         <div className={classes.commentsInnerContainer}>
           <Typography gutterBottom variant="h6">
-            {isLanguageEnglish ? "Comments" : "Komentarze"}
+            {isLanguageEnglish ? "Comments" : "Izohlar"}
           </Typography>
           {comments?.map((comment, index) => (
             <Typography key={index} gutterBottom variant="subtitle1">
@@ -43,13 +43,13 @@ const CommentSection = ({ quiz }) => {
         {user?.result?.userName && (
           <div style={{ width: "70%" }}>
             <Typography gutterBottom variant="h6">
-              {isLanguageEnglish ? "Write a comment" : "Napisz komentarz"}
+              {isLanguageEnglish ? "Write a comment" : "Izoh yozish"}
             </Typography>
             <TextField
               fullWidth
               rows={4}
               variant="outlined"
-              label={isLanguageEnglish ? "Comment" : "Komentarz"}
+              label={isLanguageEnglish ? "Comment" : "Izoh"}
               multiline
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -63,7 +63,7 @@ const CommentSection = ({ quiz }) => {
               variant="contained"
               onClick={handleComment}
             >
-              {isLanguageEnglish ? "Comment" : "Dodaj"}
+              {isLanguageEnglish ? "Comment" : "Izoh"}
             </Button>
           </div>
         )}
