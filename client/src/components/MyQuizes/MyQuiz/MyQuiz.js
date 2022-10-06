@@ -32,9 +32,9 @@ function MyQuiz({ quiz }) {
   };
 
   return (
-    <div className="md:flex">
+    <div className="md:flex p-4">
       <div className="relative">
-        <div className="absolute top-2 left-2">
+        <div className="bg-white absolute bottom-0 left-0 right-0 p-2 bg-opacity-25 backdrop-filter backdrop-blur-lg">
           <h3 className="text-lg text-black font-semibold uppercase">
             {quiz.creatorName}
           </h3>
@@ -43,11 +43,11 @@ function MyQuiz({ quiz }) {
           </h3>
         </div>
         <div
-          className="w-full h-[200px] md:w-[250px] bg-no-repeat bg-cover bg-center"
+          className="w-full h-[200px] md:w-[250px] bg-no-repeat bg-cover bg-center rounded-xl"
           style={{ backgroundImage: "url('" + quiz.backgroundImage + "')" }}
         ></div>
       </div>
-      <div className="relative flex justify-between w-full p-4">
+      <div className="relative flex justify-between w-full py-4 md:px-4">
         <div className="space-y-2 mb-4">
           <h2 className="text-2xl md:text-4xl font-semibold">{quiz.name}</h2>
           <p className="text-sm  text-gray-700 font-medium">
