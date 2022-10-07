@@ -14,6 +14,7 @@ import * as actionType from "../../constants/actionTypes";
 
 import { changeLanguage } from "../../actions/language";
 // import { Select, Option } from "@material-tailwind/react";
+import OutsideClickHandler from "react-outside-click-handler";
 
 export default function Navbarr() {
   const [openNav, setOpenNav] = useState(false);
@@ -28,7 +29,6 @@ export default function Navbarr() {
   const [profile, setProfile] = useState(false);
   const [lang, setLang] = useState(false);
 
-  console.log(typeof user);
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
     history.push("/auth");
@@ -36,13 +36,10 @@ export default function Navbarr() {
     socket.disconnect();
   };
 
-  const handeProfile = () => setProfile(!profile);
+  const handeProfile = () => {
+    setProfile(!profile);
+  };
   const handeLang = () => setLang(!lang);
-
-  // function handleSelectChange(event) {
-  //   setSelectedClient(event.target.value);
-  // }
-  // console.log(selectedClient);
 
   useEffect(() => {
     const token = user?.accessToken;
@@ -61,8 +58,6 @@ export default function Navbarr() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-
-  console.log(user);
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -160,23 +155,23 @@ export default function Navbarr() {
 
           {isLanguageEnglish ? "EN" : "UZ"}
         </span>
-        <ul className={lang ? "visible" : "hidden bg-gray-100"}>
-          <li
-            className="cursor-pointer"
-            onClick={() => {
-              dispatch(changeLanguage(!isLanguageEnglish));
-            }}
-          >
-            {/* <Typography
-              as="li"
-              variant="small"
-              color="blue-gray"
-              className="p-1 font-normal"
-            > */}
-            <span>{isLanguageEnglish ? "O`zbek" : "English"}</span>
-            {/* </Typography> */}
-          </li>
-        </ul>
+
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setLang(false);
+          }}
+        >
+          <ul className={lang ? "visible" : "hidden bg-gray-100"}>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                dispatch(changeLanguage(!isLanguageEnglish));
+              }}
+            >
+              <span>{isLanguageEnglish ? "O`zbek" : "English"}</span>
+            </li>
+          </ul>
+        </OutsideClickHandler>
       </li>
     </ul>
   );
@@ -207,32 +202,38 @@ export default function Navbarr() {
                 onClick={handeProfile}
               />
 
-              <div
-                className={
-                  profile
-                    ? "block text-center absolute mt-10 right-10 w-48 bg-gray-100 p-2 text-xs rounded-lg"
-                    : "hidden"
-                }
+              <OutsideClickHandler
+                onOutsideClick={() => {
+                  setProfile(false);
+                }}
               >
-                <ul>
-                  <li className="py-1 hover:shadow-xl transition-all rounded-sm">
-                    {user.result.userName}
-                  </li>
-                  <li className="py-1 hover:shadow-xl transition-all rounded-sm">
-                    {user.result.firstName + " " + user.result.lastName}
-                  </li>
-                  <li className="py-1 hover:shadow-xl  transition-all rounded-sm">
-                    {user.result.mail}
-                  </li>
+                <div
+                  className={
+                    profile
+                      ? "block text-center absolute mt-10 right-10 w-48 bg-gray-100 p-2 text-xs rounded-lg"
+                      : "hidden"
+                  }
+                >
+                  <ul>
+                    <li className="py-1 hover:shadow-xl transition-all rounded-sm">
+                      {user.result.userName}
+                    </li>
+                    <li className="py-1 hover:shadow-xl transition-all rounded-sm">
+                      {user.result.firstName + " " + user.result.lastName}
+                    </li>
+                    <li className="py-1 hover:shadow-xl  transition-all rounded-sm">
+                      {user.result.mail}
+                    </li>
 
-                  <li
-                    onClick={logout}
-                    className="py-1 hover:bg-red-700 cursor-pointer hover:text-white transition-all rounded-sm"
-                  >
-                    {isLanguageEnglish ? "Log out" : "Chiqish"}
-                  </li>
-                </ul>
-              </div>
+                    <li
+                      onClick={logout}
+                      className="py-1 hover:bg-red-700 cursor-pointer hover:text-white transition-all rounded-sm"
+                    >
+                      {isLanguageEnglish ? "Log out" : "Chiqish"}
+                    </li>
+                  </ul>
+                </div>
+              </OutsideClickHandler>
             </>
           ) : (
             ""
