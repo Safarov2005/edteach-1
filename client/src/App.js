@@ -1,22 +1,21 @@
-import React, { useEffect } from "react";
 
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Auth from "./components/Auth/Auth";
-import Footer from "./components/Footer/Footer";
-import QuizCreator from "./components/QuizCreator/QuizCreator";
-import Quizes from "./components/Quizes/Quizes";
-import MyQuizes from "./components/MyQuizes/MyQuizes";
-import QuizDetails from "./components/QuizDetails/QuizDetails";
-import HostScreen from "./components/Game/HostScreen/HostScreen";
-import PlayerScreen from "./components/Game/PlayerScreen/PlayerScreen";
-import JoinGame from "./components/Game/JoinGame/JoinGame";
-import { io } from "socket.io-client";
-import { useDispatch } from "react-redux";
-import { createSocket } from "./actions/socket";
+import React, { useEffect } from "react"
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
+import Home from "./components/Home/Home"
+import Auth from "./components/Auth/Auth"
+import Footer from "./components/Footer/Footer"
+import QuizCreator from "./components/QuizCreator/QuizCreator"
+import Quizes from "./components/Quizes/Quizes"
+import MyQuizes from "./components/MyQuizes/MyQuizes"
+import QuizDetails from "./components/QuizDetails/QuizDetails"
+import HostScreen from "./components/Game/HostScreen/HostScreen"
+import PlayerScreen from "./components/Game/PlayerScreen/PlayerScreen"
+import JoinGame from "./components/Game/JoinGame/JoinGame"
+import { io } from "socket.io-client"
+import { useDispatch } from "react-redux"
+import { createSocket } from "./actions/socket"
+import Navbar from "./components/Navbar/Navbar"
 
-// import Navbar from "./components/Navbar/Navbar";
-import Navbarr from "./components/Navbar/Navbarr";
 
 function App() {
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -31,7 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbarr />
+      <Navbar />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route

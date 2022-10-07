@@ -57,55 +57,66 @@ function Quizes() {
     setTags(tags.filter((tag) => tag !== chipToDelete));
 
   return (
-    <div className={styles["quizes-list"]}>
-      <AppBar
-        className={classes.appBarSearch}
+    <div className="my-5 flex flex-col justify-center mx-5">
+      <div
+        className="px-2 py-5 md:p-5 mx-auto w-full md:max-w-7xl shadow-lg my-10 md:my-16 rounded-xl bg-gray-100 flex flex-col space-y-2 md:space-y-3"
         position="static"
         color="inherit"
       >
-        <TextField
-          onKeyDown={handleKeyPress}
-          name="search"
-          variant="outlined"
-          label={
-            isLanguageEnglish
-              ? "Search quizes by name"
-              : "Test nomi bilan qidirish"
-          }
-          fullWidth
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <ChipInput
-          style={{ margin: "10px 0" }}
-          value={tags}
-          onAdd={(chip) => handleAddChip(chip)}
-          onDelete={(chip) => handleDeleteChip(chip)}
-          label={
-            isLanguageEnglish
-              ? "Search quizes by tags"
-              : "Tag nomi bilan qidirish"
-          }
-          variant="outlined"
-        />
-        <Button
+        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
+          <input
+            className="rounded-xl w-full  bg-gray-200 outline-none py-4 px-4 duration-200 placeholder-gray-800"
+            onKeyDown={handleKeyPress}
+            name="search"
+            variant="outlined"
+            placeholder={
+              isLanguageEnglish
+                ? "Search quizes by name"
+                : "Test nomi bilan qidirish"
+            }
+            fullWidth
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <input
+            className="rounded-xl w-full  bg-gray-200 outline-none py-4 px-4 duration-200 placeholder-gray-800"
+            value={tags}
+            onAdd={(chip) => handleAddChip(chip)}
+            onDelete={(chip) => handleDeleteChip(chip)}
+            placeholder={
+              isLanguageEnglish
+                ? "Search quizes by tags"
+                : "Tag nomi bilan qidirish"
+            }
+            variant="outlined"
+          />
+        </div>
+        <button
           onClick={searchPost}
-          className={classes.searchButton}
+          className="rounded-lg py-3 px-8 font-medium shadow-md text-base md:text-lg duration-300
+          active:bg-opacity-80 cursor-pointer bg-[#1a5cff] 
+          dark:bg-[#1a5cff] text-white hover:shadow-md"
           variant="contained"
           color="primary"
         >
           {isLanguageEnglish ? "Search" : "Qidirish"}
-        </Button>
-      </AppBar>
+        </button>
+      </div>
       {isLoading ? (
-        <CircularProgress />
+        <div className="flex items-center justify-center my-8">
+          <CircularProgress />
+        </div>
       ) : (
-        quizes.map((quiz) => <Quiz key={quiz._id} quiz={quiz} />)
+        quizes.map((quiz) => (
+          <div className="mx-auto w-full md:max-w-7xl shadow-lg  rounded-xl bg-gray-100 my-2 md:my-4">
+            <Quiz key={quiz._id} quiz={quiz} />
+          </div>
+        ))
       )}
       {!searchQuery && !tags.length && (
-        <Paper className={classes.pagination} elevation={6}>
+        <div className="flex items-center justify-center mt-6">
           <Pagination page={page} />
-        </Paper>
+        </div>
       )}
     </div>
   );

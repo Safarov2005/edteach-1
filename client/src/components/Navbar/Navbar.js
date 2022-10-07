@@ -160,13 +160,9 @@ export default function Navbarr() {
 
           {isLanguageEnglish ? "EN" : "UZ"}
         </span>
-        <ul
-          className={
-            lang ? "visible" : "hidden bg-gray-100"
-          }
-        >
+        <ul className={lang ? "visible" : "hidden bg-gray-100"}>
           <li
-          className="cursor-pointer"
+            className="cursor-pointer"
             onClick={() => {
               dispatch(changeLanguage(!isLanguageEnglish));
             }}
@@ -177,7 +173,7 @@ export default function Navbarr() {
               color="blue-gray"
               className="p-1 font-normal"
             > */}
-              <span>{isLanguageEnglish ? "O`zbek" : "English"}</span>
+            <span>{isLanguageEnglish ? "O`zbek" : "English"}</span>
             {/* </Typography> */}
           </li>
         </ul>

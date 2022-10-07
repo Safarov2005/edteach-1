@@ -64,7 +64,7 @@ const Post = () => {
             {quiz.description}
           </Typography>
           <Typography variant="h6">
-            {isLanguageEnglish ? "Created by:" : "Tomonidan yaratilgan: "}
+            {isLanguageEnglish ? "Created by:" : "Yaratuvchi: "}
             {quiz.creatorName}
           </Typography>
           <Typography variant="body1">
@@ -81,7 +81,7 @@ const Post = () => {
       {quiz.questionList.length > 0 && (
         <div>
           <Typography gutterBottom variant="h5">
-            {isLanguageEnglish ? "Question list:" : "Savollar ro`yxati:"}
+            {isLanguageEnglish ? "Question list:" : "Testlar ro`yhati:"}
           </Typography>
           <Divider />
           {quiz.questionList.map((question) => (
@@ -95,7 +95,7 @@ const Post = () => {
           <Typography gutterBottom variant="h5">
             {isLanguageEnglish
               ? "You might also like:"
-              : "Sizga ham yoqishi mumkin:"}
+              : "Buni ham yoqtirishingiz mumkin:"}
           </Typography>
           <Divider />
           {recommendedQuizes.map((quiz) => (
