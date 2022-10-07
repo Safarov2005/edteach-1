@@ -176,7 +176,7 @@ export default function Navbarr() {
     </ul>
   );
   return (
-    <Navbar className="bg-[#111817] sticky top-2 z-10 left-0 mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+    <Navbar className="bg-[#111817] opacity-90 sticky top-2 z-10 left-0 mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
