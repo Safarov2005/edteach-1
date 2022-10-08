@@ -107,7 +107,7 @@ function Quiz({ quiz }) {
         </div>
         <div
           onClick={openQuizDetailsPage}
-          className="w-full h-[200px] md:w-[250px] bg-no-repeat bg-cover bg-center rounded-xl"
+          className="w-full cursor-pointer h-[200px] md:w-[250px] bg-no-repeat bg-cover bg-center rounded-xl"
           style={{ backgroundImage: "url('" + quiz.backgroundImage + "')" }}
         ></div>
       </div>
