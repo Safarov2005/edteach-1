@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.14065dfa.css",
+    "main.js": "/static/js/main.5a6ab64d.js",
+    "static/media/img2.jpeg": "/static/media/img2.a77ccfb7c3a8883253de.jpeg",
+    "static/media/img1.jpeg": "/static/media/img1.fad0d6bee0fea8ff3545.jpeg",
+    "static/media/img5.svg": "/static/media/img5.52c49ae26b9a2aa6b5797400b33aa62d.svg",
+    "static/media/img4.svg": "/static/media/img4.059360b70b150456b9b52ee0f249ac38.svg",
+    "static/media/img3.svg": "/static/media/img3.3014aea5ea2225db68e8adac848557f8.svg",
+    "static/media/questionType.svg": "/static/media/questionType.7c178908a2fb6a74bfcfc10672377dfd.svg",
+    "static/media/gamePoints.svg": "/static/media/gamePoints.21dc7bdea4067fe2b1302d60901e8743.svg",
+    "static/media/answerOptions.svg": "/static/media/answerOptions.713924d146421024332a29cc6af8a806.svg",
+    "static/media/answerCheck.svg": "/static/media/answerCheck.5ddce735bf666ffa1e26bf1364778d9f.svg",
+    "static/media/defaultQuestionImage.svg": "/static/media/defaultQuestionImage.820dfce5a26c96defc7e4818b9c2da5b.svg",
+    "index.html": "/index.html",
+    "static/media/timer.svg": "/static/media/timer.a004ed8aea8ba121c8f188945945c8eb.svg",
+    "static/media/circle.svg": "/static/media/circle.8ca5f8186b1f587cb95ce9f80b764859.svg",
+    "static/media/diamond.svg": "/static/media/diamond.04a4fa441eab9d4112c405450d53e99b.svg",
+    "static/media/triangle.svg": "/static/media/triangle.78bac663de29daa34cfc0af85421821e.svg",
+    "static/media/square.svg": "/static/media/square.29632198d0da1769400729ae5c7942a3.svg",
+    "main.14065dfa.css.map": "/static/css/main.14065dfa.css.map",
+    "main.5a6ab64d.js.map": "/static/js/main.5a6ab64d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14065dfa.css",
+    "static/js/main.5a6ab64d.js"
+  ]
+}
