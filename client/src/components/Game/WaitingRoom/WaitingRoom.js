@@ -13,33 +13,34 @@ function WaitingRoom({ pin, socket }) {
   }, [playerList, socket]);
 
   return (
-    <div className={styles["waiting-room"]}>
-      <h1 className={styles["title"]}>
+    <div className="w-[100%] md:[90%] xl:w-[40%] bg-gray-200 p-4 md:p-8 rounded-2xl">
+      <h1 className="text-center text-xl font-semibold uppercase">
         {isLanguageEnglish ? "Waiting room" : "Kutish rejimida"}
       </h1>
-      <h2 className={styles["header"]}>
+      <h2 className="text-center text-lg my-2 font-semibold">
         {isLanguageEnglish
-          ? "Show PIN to your Talabas"
-          : "Ishtirokchi uchun PIN"}
+          ? "PIN"
+          : "PIN"}
         : <span className="text-xl text-blue-500">{pin}</span>
       </h2>
-      <div className={styles["players-list"]}>
-        <div className={styles["leaderboard"]}>
-          <h1 className={styles["leaderboard-title"]}>
-            {isLanguageEnglish ? "Player List" : "Ishtorkchilar ro`yhati"}
+      <div className="w-full bg-gray-100 h-[300px] md:h-[350px] p-4 text-center text-base font-semibold rounded-2xl">
+        <div className="overflow-y-scroll overflow-x-hidden h-full block w-full ">
+          <h1>
+            {isLanguageEnglish ? "Player List" : "Ishtorkchilar ro`yhati:"}
           </h1>
-          <div className="overflow-y-scroll overflow-x-hidden scrollbar-hide h-full block w-full bg-gradient-to-r from-green-400 to-purple-500 lg:inline">
+          <div className="p-0 md:p-5">
             {playerList.length > 0 ? (
               <ol>
-                {playerList.map((player) => (
-                  <li>
-                    <mark>{player.userName}</mark>
+                {playerList.map((player, index) => (
+                  <li className="flex items-center justify-between bg-gray-200 px-4 py-3 my-2 rounded-lg">
+                    <p className="text-lg font-semibold">{index}</p>
+                    <h1 className="ml-0 xl:ml-5">{player.userName}</h1>
                     <small>{isLanguageEnglish ? "Student" : "Talaba"}</small>
                   </li>
                 ))}
               </ol>
             ) : (
-              <h1 className={styles["leaderboard-title"]}>
+              <h1 className="flex items-center justify-center py-4 text-red-500 font-semibold text-lg">
                 {isLanguageEnglish
                   ? "No players yet"
                   : "Hali ishtorkchilar yo`q"}

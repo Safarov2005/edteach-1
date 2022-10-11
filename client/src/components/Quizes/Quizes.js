@@ -78,18 +78,6 @@ function Quizes() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <input
-            className="rounded-xl w-full  bg-gray-200 outline-none py-4 px-4 duration-200 placeholder-gray-800"
-            value={tags}
-            onAdd={(chip) => handleAddChip(chip)}
-            onDelete={(chip) => handleDeleteChip(chip)}
-            placeholder={
-              isLanguageEnglish
-                ? "Search quizes by tags"
-                : "Tag nomi bilan qidirish"
-            }
-            variant="outlined"
-          />
         </div>
         <button
           onClick={searchPost}

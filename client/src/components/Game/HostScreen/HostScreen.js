@@ -167,7 +167,9 @@ function HostScreen() {
       {!isGameStarted && (
         <div className={styles.lobby}>
           <WaitingRoom pin={game?.pin} socket={socket} />
-          <button onClick={startGame}>
+          <button className="bg-blue-500 w-[100%] md:w-[90%] xl:w-[40%] rounded-lg py-3 px-8 cursor-pointer active:scale-95
+              shadow-md text-sm duration-300 ease-in-out hover:bg-blue-500
+              md:text-sm text-white mt-4" onClick={startGame}>
             {isLanguageEnglish ? "Start a game" : "Boshlash"}
           </button>
         </div>
