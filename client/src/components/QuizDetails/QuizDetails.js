@@ -37,49 +37,37 @@ const Post = () => {
 
   if (isLoading) {
     return (
-      <Paper elevation={6} className={classes.loadingPaper}>
-        <CircularProgress size="7em" />
-      </Paper>
+      <div className="h-[90vh] flex items-center justify-center">
+        <CircularProgress size="4em" />
+      </div>
     );
   }
 
   const recommendedQuizes = quizes.filter(({ _id }) => _id !== quiz._id);
 
   return (
-    <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
-      <div className={classes.card}>
-        <div className={classes.section}>
-          <Typography variant="h3" component="h2">
-            {quiz.name}
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="h6"
-            color="textSecondary"
-            component="h2"
-          >
-            {quiz.tags.map((tag) => `#${tag} `)}
-          </Typography>
-          <Typography gutterBottom variant="body1" component="p">
-            {quiz.description}
-          </Typography>
-          <Typography variant="h6">
-            {isLanguageEnglish ? "Created by:" : "Yaratuvchi: "}
-            {quiz.creatorName}
-          </Typography>
-          <Typography variant="body1">
-            {moment(quiz.dateCreated).fromNow()}
-          </Typography>
-          <Divider style={{ margin: "20px 0" }} />
-          <CommentSection quiz={quiz} />
-          <Divider style={{ margin: "20px 0" }} />
+    <div className="mx-auto w-full md:max-w-7xl">
+      <div className="px-2 py-5 md:p-5 my-10 mx-4 md:mx-0 md:my-16 rounded-xl bg-gray-100 flex flex-col space-y-2 md:space-y-3">
+        <div className="flex items-center">
+          <div className="w-32 h-full">
+            <img className="" src={quiz.backgroundImage} alt="" />
+          </div>
+          <div className="ml-4">
+            <h6 className="text-xl font-semibold">
+              {isLanguageEnglish ? "Created by:" : "Yaratuvchi: "}
+              {quiz.creatorName}
+            </h6>
+            <h1 className="text-lg font-semibold">{quiz.name}</h1>
+            <p className="">{quiz.description}</p>
+            <Typography variant="body1">
+              {moment(quiz.dateCreated).fromNow()}
+            </Typography>
+          </div>
         </div>
-        <div className={classes.imageSection}>
-          <img className={classes.media} src={quiz.backgroundImage} alt="" />
-        </div>
+        <CommentSection quiz={quiz} />
       </div>
       {quiz.questionList.length > 0 && (
-        <div>
+        <div className=" mx-auto w-full md:max-w-7xl my-10 md:my-16">
           <Typography gutterBottom variant="h5">
             {isLanguageEnglish ? "Question list:" : "Testlar ro`yhati:"}
           </Typography>
@@ -89,7 +77,6 @@ const Post = () => {
           ))}
         </div>
       )}
-      <Divider />
       {recommendedQuizes.length > 0 && (
         <div>
           <Typography gutterBottom variant="h5">
@@ -103,7 +90,7 @@ const Post = () => {
           ))}
         </div>
       )}
-    </Paper>
+    </div>
   );
 };
 

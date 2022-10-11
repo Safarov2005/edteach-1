@@ -59,7 +59,7 @@ function Quizes() {
   return (
     <div className="my-5 flex flex-col justify-center mx-5">
       <div
-        className="px-2 py-5 md:p-5 mx-auto w-full md:max-w-7xl shadow-lg my-10 md:my-16 rounded-xl bg-gray-100 flex flex-col space-y-2 md:space-y-3"
+        className="px-2 py-5 md:p-5 mx-auto w-full md:max-w-7xl my-10 md:my-16 rounded-xl bg-gray-100 flex flex-col space-y-2 md:space-y-3"
         position="static"
         color="inherit"
       >

@@ -24,23 +24,23 @@ function WaitingRoom({ pin, socket }) {
         : <span className="text-xl text-blue-500">{pin}</span>
       </h2>
       <div className="w-full bg-gray-100 h-[300px] md:h-[350px] p-4 text-center text-base font-semibold rounded-2xl">
-        <div className="overflow-y-scroll overflow-x-hidden h-full block w-full ">
-          <h1>
+        <div className="relative overflow-y-scroll overflow-x-hidden scrollbar-hide h-full block w-full ">
+          <h1 className="absolute top-0 left-0 right-0">
             {isLanguageEnglish ? "Player List" : "Ishtorkchilar ro`yhati:"}
           </h1>
-          <div className="p-0 md:p-5">
+          <div className="p-0 md:p-5 h-full">
             {playerList.length > 0 ? (
               <ol>
                 {playerList.map((player, index) => (
                   <li className="flex items-center justify-between bg-gray-200 px-4 py-3 my-2 rounded-lg">
-                    <p className="text-lg font-semibold">{index}</p>
+                    <p className="text-lg font-semibold">{index + 1}</p>
                     <h1 className="ml-0 xl:ml-5">{player.userName}</h1>
                     <small>{isLanguageEnglish ? "Student" : "Talaba"}</small>
                   </li>
                 ))}
               </ol>
             ) : (
-              <h1 className="flex items-center justify-center py-4 text-red-500 font-semibold text-lg">
+              <h1 className="flex items-center justify-center h-full -mt-5 text-red-500 font-semibold text-lg">
                 {isLanguageEnglish
                   ? "No players yet"
                   : "Hali ishtorkchilar yo`q"}
