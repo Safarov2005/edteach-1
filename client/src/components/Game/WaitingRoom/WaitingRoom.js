@@ -21,29 +21,31 @@ function WaitingRoom({ pin, socket }) {
         {isLanguageEnglish
           ? "Show PIN to your Talabas"
           : "Ishtirokchi uchun PIN"}
-        : {pin}
+        : <span className="text-xl text-blue-500">{pin}</span>
       </h2>
       <div className={styles["players-list"]}>
         <div className={styles["leaderboard"]}>
           <h1 className={styles["leaderboard-title"]}>
             {isLanguageEnglish ? "Player List" : "Ishtorkchilar ro`yhati"}
           </h1>
-          {playerList.length > 0 ? (
-            <ol>
-              {playerList.map((player) => (
-                <li>
-                  <mark>{player.userName}</mark>
-                  <small>{isLanguageEnglish ? "Student" : "Talaba"}</small>
-                </li>
-              ))}
-            </ol>
-          ) : (
-            <h1 className={styles["leaderboard-title"]}>
-              {isLanguageEnglish
-                ? "No players yet"
-                : "Hali ishtorkchilar yo`q"}
-            </h1>
-          )}
+          <div className="overflow-y-scroll overflow-x-hidden scrollbar-hide h-full block w-full bg-gradient-to-r from-green-400 to-purple-500 lg:inline">
+            {playerList.length > 0 ? (
+              <ol>
+                {playerList.map((player) => (
+                  <li>
+                    <mark>{player.userName}</mark>
+                    <small>{isLanguageEnglish ? "Student" : "Talaba"}</small>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <h1 className={styles["leaderboard-title"]}>
+                {isLanguageEnglish
+                  ? "No players yet"
+                  : "Hali ishtorkchilar yo`q"}
+              </h1>
+            )}
+          </div>
         </div>
       </div>
     </div>

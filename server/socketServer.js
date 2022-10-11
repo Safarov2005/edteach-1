@@ -1,14 +1,10 @@
 const { instrument } = require("@socket.io/admin-ui");
 
-const io = require("socket.io")(
-  3001,
-  { pingInterval: 60000 },
-  {
-    cors: {
-      origin: ["http://localhost:3000", "https://admin.socket.io/admin"],
-    },
-  }
-);
+const io = require("socket.io")(3001, {
+  cors: {
+    origin: ["http://localhost:3000", "https://admin.socket.io/admin"],
+  },
+});
 
 let game;
 let leaderboard;

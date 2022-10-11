@@ -14,7 +14,7 @@ function QuestionListItem({ number, type, name, time, image, onClick }) {
           {name}
         </h4>
         <div className={styles["question-preview-time"]}>{time}</div>
-        <div className={styles["question-preview-background-image"]}> 
+        <div className={styles["question-preview-background-image"]}>
           {image.length === 0 ? (
             <img src={defaultQuestionImage} alt="" />
           ) : (

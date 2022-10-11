@@ -6,7 +6,7 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
-// import styles from "./navbar.module.css";
+
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import decode from "jwt-decode";
@@ -65,7 +65,7 @@ export default function Navbarr() {
         <>
           <li>
             <Link
-              className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dark:text-white"
+              className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               aria-current="page"
               to="/quizes"
             >
@@ -84,7 +84,7 @@ export default function Navbarr() {
           <li>
             <Link
               to="/games/joingame"
-              className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
             >
               <Typography
                 as="li"
@@ -102,7 +102,7 @@ export default function Navbarr() {
             <li>
               <Link
                 to="/myquizes"
-                className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 <Typography
                   as="li"
@@ -121,7 +121,7 @@ export default function Navbarr() {
       ) : (
         <Link
           to="/auth"
-          className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+          className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
         >
           <Typography
             as="li"
@@ -215,13 +215,13 @@ export default function Navbarr() {
                   }
                 >
                   <ul>
-                    <li className="py-1 hover:shadow-xl transition-all rounded-sm">
+                    <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
                       {user.result.userName}
                     </li>
-                    <li className="py-1 hover:shadow-xl transition-all rounded-sm">
+                    <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
                       {user.result.firstName + " " + user.result.lastName}
                     </li>
-                    <li className="py-1 hover:shadow-xl  transition-all rounded-sm">
+                    <li className="py-1 hover:bg-gray-200  transition-all rounded-sm">
                       {user.result.mail}
                     </li>
 

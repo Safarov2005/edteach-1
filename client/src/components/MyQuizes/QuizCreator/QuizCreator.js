@@ -281,7 +281,7 @@ function QuizCreator() {
             {isLanguageEnglish ? "Settings" : "Sozlamalar"}
           </button>
         </div>
-        <div className="m-[10px] lg:block hidden">
+        <div className={styles["question-list-container"]}>
           {quizData.questionList.length > 0 &&
             quizData.questionList.map((question) => (
               <QuestionListItem
@@ -294,6 +294,7 @@ function QuizCreator() {
                 image={question.backgroundImage}
               />
             ))}
+
           <button
             onClick={() => {
               isQuestionDataSave
@@ -304,7 +305,7 @@ function QuizCreator() {
                       : "O`zgartirilgan savol ma`lumotlarini saqlang"
                   );
             }}
-            className="w-full sm:block hidden rounded-lg py-2  px-3  cursor-pointer active:scale-95
+            className="w-full rounded-lg py-2  px-3  cursor-pointer active:scale-95
             shadow-md text-sm duration-300 border bg-[#1a5cff] active:bg-opacity-80
             ease-in-out md:text-sm text-white"
           >
@@ -312,7 +313,6 @@ function QuizCreator() {
           </button>
         </div>
       </div>
-      {/* sidebar 2 box */}
       <div className={styles["question-creator"]}>
         <input
           type="text"
@@ -447,7 +447,6 @@ function QuizCreator() {
         >
           {isLanguageEnglish ? "Settings" : "Sozlamalar"}
         </button>
-
         <div
           style={{ display: isQuizOptionsVisible ? "block" : "none" }}
           className={styles["question-options"]}
@@ -691,31 +690,6 @@ function QuizCreator() {
             >
               {isLanguageEnglish ? "Save changes" : "O`zgarishlarni saqlang"}
             </button>
-
-            <button
-              onClick={() => {
-                isQuestionDataSave
-                  ? addNewQuestion()
-                  : alert(
-                      isLanguageEnglish
-                        ? "Save changes in question data first"
-                        : "O`zgartirilgan savol ma`lumotlarini saqlang"
-                    );
-              }}
-              className="w-full sm:hidden block mt-3 rounded-lg py-2  px-3  cursor-pointer active:scale-95
-            shadow-md text-sm duration-300 border bg-[#1a5cff] active:bg-opacity-80
-            ease-in-out md:text-sm text-white"
-            >
-              {isLanguageEnglish ? "Add question" : "Savol qo`shish"}
-            </button>
-            <button
-              className="w-full rounded-lg py-2 sm:hidden block px-3 border-[1px] border-[solid] border-[gray]  cursor-pointer active:scale-95
-              shadow-md text-sm duration-300  bg-[#1a5cff] active:bg-opacity-80
-              ease-in-out md:text-sm text-[white] mt-[7px]"
-              onClick={handleQuizSubmit}
-            >
-              {isLanguageEnglish ? "Submit" : "Jo`natmoq"}
-            </button>
             <button
               onClick={handleQuestionRemove}
               className="md:w-full sm:w-[45%] w-full md:mt-3 sm:mt-0 mt-3 rounded-lg py-2  px-3  cursor-pointer active:scale-95
@@ -725,20 +699,6 @@ function QuizCreator() {
               {isLanguageEnglish ? "Delete" : "O`chirmoq"}
             </button>
           </div>
-        </div>
-        <div className="p-[10px] w-full lg:hidden block">
-          {quizData.questionList.length > 0 &&
-            quizData.questionList.map((question) => (
-              <QuestionListItem
-                onClick={() => showQuestion(question.questionIndex)}
-                key={question.questionIndex}
-                number={question.questionIndex}
-                type={question.questionType}
-                name={question.question}
-                time={question.answerTime}
-                image={question.backgroundImage}
-              />
-            ))}
         </div>
       </div>
     </section>

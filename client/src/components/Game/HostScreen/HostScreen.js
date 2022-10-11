@@ -18,7 +18,7 @@ function HostScreen() {
   const [isPreviewScreen, setIsPreviewScreen] = useState(false);
   const [isQuestionScreen, setIsQuestionScreen] = useState(false);
   const [isQuestionResultScreen, setIsQuestionResultScreen] = useState(false);
-  const [isLeaderboardScreen, setIsLeaderboardScreen] = useState(false);
+  const [isLeaderboardScreen, setIsLeaderboardScreen] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [timer, setTimer] = useState(0);
   const [playerList, setPlayerList] = useState([]);
@@ -209,7 +209,7 @@ function HostScreen() {
           </div>
         </div>
       )}
-      {isLeaderboardScreen && (
+      {/* {isLeaderboardScreen && (
         <div className={styles["question-preview"]}>
           <div className={styles["leaderboard"]}>
             <h1 className={styles["leaderboard-title"]}>
@@ -229,7 +229,7 @@ function HostScreen() {
             </ol>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

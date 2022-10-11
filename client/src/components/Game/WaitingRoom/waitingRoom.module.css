@@ -2,10 +2,8 @@
   width: 60%;
   height: 80%;
   padding: 10px;
-  border: 1px solid black;
   text-align: center;
-  background-color: white;
-  box-shadow: 0px 2px 20px #cfd8dc;
+  background-color: rgb(188, 186, 186);
   border-radius: 0.2rem;
   display: flex;
   justify-content: center;
@@ -50,8 +48,8 @@
 .leaderboard {
   position: relative;
   width: 70%;
-  height: 308px;
-  background: linear-gradient(to bottom, #9ca2af, #7a99e7);
+  height: 290px;
+  background: linear-gradient(500deg, #22c55e, #a855f7);
   border-radius: 10px;
   box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
 }
@@ -135,71 +133,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fa6855;
+  background: linear-gradient(90deg, #090649 0%, rgb(27, 138, 235) 35%, rgba(9,9,121,1) 100%);
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   opacity: 0;
 }
-.leaderboard ol li:nth-child(1) {
-  background: #fa6855;
-}
-.leaderboard ol li:nth-child(1)::after {
-  background: #fa6855;
-}
-.leaderboard ol li:nth-child(2) {
-  background: #e0574f;
-}
-.leaderboard ol li:nth-child(2)::after {
-  background: #e0574f;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
-}
-.leaderboard ol li:nth-child(2) mark::before,
-.leaderboard ol li:nth-child(2) mark::after {
-  border-top: 6px solid #ba4741;
-  bottom: -7px;
-}
-.leaderboard ol li:nth-child(3) {
-  background: #d7514d;
-}
-.leaderboard ol li:nth-child(3)::after {
-  background: #d7514d;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.11);
-}
-.leaderboard ol li:nth-child(3) mark::before,
-.leaderboard ol li:nth-child(3) mark::after {
-  border-top: 2px solid #b0433f;
-  bottom: -3px;
-}
-.leaderboard ol li:nth-child(4) {
-  background: #cd4b4b;
-}
-.leaderboard ol li:nth-child(4)::after {
-  background: #cd4b4b;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-}
-.leaderboard ol li:nth-child(4) mark::before,
-.leaderboard ol li:nth-child(4) mark::after {
-  top: -7px;
-  bottom: auto;
-  border-top: none;
-  border-bottom: 6px solid #a63d3d;
-}
-.leaderboard ol li:nth-child(5) {
-  background: #c24448;
-  border-radius: 0 0 10px 10px;
-}
-.leaderboard ol li:nth-child(5)::after {
-  background: #c24448;
-  box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 0 0 10px 10px;
-}
-.leaderboard ol li:nth-child(5) mark::before,
-.leaderboard ol li:nth-child(5) mark::after {
-  top: -9px;
-  bottom: auto;
-  border-top: none;
-  border-bottom: 8px solid #993639;
-}
+
 .leaderboard ol li:hover {
   z-index: 2;
   overflow: visible;
