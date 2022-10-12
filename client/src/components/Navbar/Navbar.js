@@ -263,24 +263,24 @@ export default function Navbarr() {
                   <div
                     className={
                       profile
-                        ? "block text-center absolute mt-10 right-10 w-48 bg-gray-100 p-2 text-xs rounded-lg"
+                        ? "block text-center bg-[#111817] shadow-lg border absolute mt-12 right-12 w-48 bg-gray-100 py-2 text-xs rounded-lg"
                         : "hidden"
                     }
                   >
                     <ul>
-                      <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
+                      <li className="py-1 hover:bg-[#111817] text-white transition-all rounded-sm">
                         {user.result.userName}
                       </li>
-                      <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
+                      <li className="py-1 hover:bg-[#111817] text-white transition-all rounded-sm">
                         {user.result.firstName + " " + user.result.lastName}
                       </li>
-                      <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
+                      <li className="py-1 hover:bg-[#111817] text-white transition-all rounded-sm">
                         {user.result.mail}
                       </li>
 
                       <li
                         onClick={logout}
-                        className="py-1 hover:bg-red-700 cursor-pointer hover:text-white transition-all rounded-sm"
+                        className="py-1 hover:bg-red-700 cursor-pointer text-white transition-all rounded-sm"
                       >
                         {isLanguageEnglish ? "Log out" : "Chiqish"}
                       </li>

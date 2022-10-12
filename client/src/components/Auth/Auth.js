@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Input from "./Input";
 import { login, register } from "../../actions/auth";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 const initialState = {
   userType: "",
@@ -40,7 +40,6 @@ function Auth() {
     if (isSignup) {
       dispatch(register(formData, history));
     } else {
-      toast.error("Foydalanuvchi topilmadi yoki parol xato!");
       dispatch(login(formData, history));
     }
   };

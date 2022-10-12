@@ -51,8 +51,7 @@ function UseFul() {
             <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
             <div className="relative h-64 md:h-96 w-full py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
               <div>
-                <p className="text-lg md:text-2xl font-medium text-white"></p>
-                <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                <h2 className="mt-0 text-2xl md:text-3xl font-semibold tracking-tight text-white">
                   {isLanguageEnglish
                     ? "National and foreign scientific bases"
                     : "Milliy va xorijiy segmentdagi ilmiy bazalar"}
@@ -62,7 +61,7 @@ function UseFul() {
           </div>
         </li>
 
-        <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+        <li className="snap-center w-full md:w-[35vw] rounded-3xl cursor-not-allowed">
           <div className="relative flex-shrink-0 w-full">
             <img
               src={img6}
@@ -72,19 +71,19 @@ function UseFul() {
             <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
             <div className="relative h-64 md:h-96 w-full py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
               <div>
-                <p className="text-lg md:text-2xl font-medium text-white"></p>
-                <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                <h2 className="mt-0 text-2xl md:text-3xl font-semibold tracking-tight text-white">
                   {isLanguageEnglish
                     ? "Online video communication"
                     : "Onlayn videoaloqa"}
                 </h2>
+                    <p className="text-sm font-semibold md:text-lg font-medium text-green-500">{isLanguageEnglish ? "Will be added soon" : "Tez orada qo'shiladi"}</p>
               </div>
             </div>
           </div>
         </li>
       </ul>
-      <ul className="container my-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 justify-items-center w-fit px-5 md:px-0">
-        <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+      <ul className="container my-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 justify-items-center w-full md:w-fit px-5 md:px-0">
+      <li className="snap-center w-full md:w-[35vw] rounded-3xl cursor-not-allowed">
           <div className="relative flex-shrink-0 w-full">
             <img
               src={img3}
@@ -94,16 +93,17 @@ function UseFul() {
             <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
             <div className="relative h-64 md:h-96 w-full py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
               <div>
-                <p className="text-lg md:text-2xl font-medium text-white"></p>
-                <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                <h2 className="mt-0 text-2xl md:text-3xl font-semibold tracking-tight text-white">
                   {isLanguageEnglish ? "Home assignment" : "Uyga topshiriq"}
                 </h2>
+                <p className="text-sm font-semibold md:text-lg font-medium text-green-500">{isLanguageEnglish ? "Will be added soon" : "Tez orada qo'shiladi"}</p>
               </div>
             </div>
           </div>
         </li>
+        
 
-        <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+        <li className="snap-center w-full md:w-[35vw] rounded-3xl cursor-not-allowed">
           <div className="relative flex-shrink-0 w-full">
             <img
               src={img2}
@@ -113,12 +113,12 @@ function UseFul() {
             <div className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/30  rounded-3xl" />
             <div className="relative h-64 md:h-96 w-full py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
               <div>
-                <p className="text-lg md:text-2xl font-medium text-white"></p>
-                <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                <h2 className="mt-0 text-2xl md:text-3xl font-semibold tracking-tight text-white">
                   {isLanguageEnglish
                     ? "Show presentation"
                     : "Taqdimot namoyish etish"}
                 </h2>
+                <p className="text-sm font-semibold md:text-lg font-medium text-green-500">{isLanguageEnglish ? "Will be added soon" : "Tez orada qo'shiladi"}</p>
               </div>
             </div>
           </div>
@@ -132,8 +132,8 @@ function UseFul() {
             : "hidden"
         }
       >
-        <div className="relative w-[80%]  h-auto  bg-[#111817] shadow-lg rounded-xl space-y-2">
-          <div className="sticky z-20 top-0  right-0 flex items-center !text-white justify-between bg-[#111817 rounded-t-2xl shadow-sm py-4 px-6">
+        <div className="relative w-[90%] md:w-[80%] h-auto bg-[#111817] shadow-lg rounded-xl space-y-2 py-3 px-3 md:p-5">
+          <div className="sticky z-20 top-0  right-0 flex items-center !text-white justify-between bg-[#111817 rounded-t-2xl shadow-sm p-0 md:py-4 md:px-6">
             <svg
               onClick={CloseDialog}
               xmlns="http://www.w3.org/2000/svg"
@@ -151,9 +151,9 @@ function UseFul() {
             </svg>
           </div>
 
-          <ul className="pb-10 grid grid-cols-1 md:grid-cols-2 md:px-0 ">
+          <ul className="pb-10 grid grid-cols-1 md:grid-cols-2 md:px-0">
             <Link to="/links">
-              <li className="snap-center cursor-pointer w-full rounded-3xl px-1 sm:mt-0 mt-5">
+              <li className="snap-center cursor-pointer w-full rounded-2xl px-2 sm:mt-0 mt-5">
                 <div className="relative flex-shrink-0 w-full">
                   <img
                     src={img5}
@@ -163,8 +163,7 @@ function UseFul() {
                   <div className="absolute inset-0 h-full w-[50%] bg-gradient-to-br from-black/30  rounded-3xl" />
                   <div className="relative h-64 md:h-96 w-[50%] py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
                     <div>
-                      <p className="text-lg md:text-2xl font-medium text-white"></p>
-                      <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                      <h2 className="mt-0 text-2xl md:text-3xl font-semibold tracking-tight text-white">
                         {isLanguageEnglish
                           ? "Foreign scientific technical bases"
                           : "Xorijiy ilmiy texnik-bazalar"}
@@ -174,7 +173,7 @@ function UseFul() {
                 </div>
               </li>
             </Link>
-            <li className="snap-center w-[100%] rounded-3xl px-1 sm:mt-0 mt-5">
+            <li className="snap-center w-[100%] rounded-2xl px-2 sm:mt-0 mt-5 cursor-not-allowed">
               <div className="relative flex-shrink-0 w-full">
                 <img
                   src={img4}
@@ -182,14 +181,14 @@ function UseFul() {
                   alt="project images"
                 />
                 <div className="absolute inset-0 h-full w-[50%] bg-gradient-to-br from-black/30  rounded-3xl" />
-                <div className="relative h-64 md:h-96 w-[50%]py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
+                <div className="relative h-64 md:h-96 w-[50%] py-8 px-5 md:p-8 lg:p-12 flex flex-col justify-between items-start">
                   <div>
-                    <p className="text-lg md:text-2xl font-medium text-white"></p>
-                    <h2 className="mt-3 w-2/3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                    <h2 className="mt-0 text-2xl md:text-3xl font-semibold tracking-tight text-white">
                       {isLanguageEnglish
                         ? "Bases on scientific activities of national content"
                         : "Milliy kontentdagi ilmiy faoliyatiga doir bazalar"}
                     </h2>
+                    <p className="text-sm font-semibold md:text-lg font-medium text-green-500">{isLanguageEnglish ? "Will be added soon" : "Tez orada qo'shiladi"}</p>
                   </div>
                 </div>
               </div>
