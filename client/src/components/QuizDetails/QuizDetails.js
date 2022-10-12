@@ -66,17 +66,6 @@ const Post = () => {
         </div>
         <CommentSection quiz={quiz} />
       </div>
-      {quiz.questionList.length > 0 && (
-        <div className=" mx-auto w-full md:max-w-7xl my-10 md:my-16">
-          <Typography gutterBottom variant="h5">
-            {isLanguageEnglish ? "Question list:" : "Testlar ro`yhati:"}
-          </Typography>
-          <Divider />
-          {quiz.questionList.map((question) => (
-            <Question key={question._id} question={question} />
-          ))}
-        </div>
-      )}
       {recommendedQuizes.length > 0 && (
         <div>
           <Typography gutterBottom variant="h5">

@@ -18,7 +18,7 @@ function Home() {
       <section className={styles["page-section"]}>
         <section className="my-10 md:my-16 lg:my-20">
           <ul className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 justify-items-center w-fit px-5 md:px-0">
-            <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+            <li className="snap-center w-full md:w-[40vw] lg:w-[35vw] rounded-3xl">
               <div className="relative flex-shrink-0 w-full">
                 <img
                   src="https://blog.cambridgecoaching.com/hs-fs/hubfs/studying-1.jpg?width=1365&name=studying-1.jpg"
@@ -45,7 +45,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className="snap-center w-full md:w-[35vw] rounded-3xl">
+            <li className="snap-center w-full md:w-[40vw] lg:w-[35vw] rounded-3xl">
               <div className="relative flex-shrink-0 w-full">
                 <img
                   src="https://www.edgeip.com/images/FCK/Image/201812/Applying-to-university-college.jpg"
@@ -110,10 +110,10 @@ function Home() {
           <h1 className="text-xl md:text-2xl lg:text-3xl text-center font-semibold uppercase my-10">
             {isLanguageEnglish
               ? "We offer you the following:"
-              : "Biz sizga quyidagilarni taklif etamiz:"}
+              : "Quyidagilarni taklif etamiz"}
           </h1>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 justify-items-center w-fit px-20 md:px-0">
-            <div className="relative w-[90vw] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
+            <div className="relative w-[90vw] md:w-[26rem] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
               <div className="relative w-full rounded-xl">
                 <img
                   className="rounded-xl object-cover object-top h-auto"
@@ -136,7 +136,7 @@ function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative w-[90vw] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
+            <div className="relative w-[90vw] md:w-[26rem] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
               <div className="relative w-full rounded-xl">
                 <img
                   className="rounded-xl object-cover object-top h-auto"
@@ -159,7 +159,7 @@ function Home() {
                 </p>
               </div>
             </div>
-            <div className="relative w-[90vw] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
+            <div className="relative w-[90vw] md:w-[26rem] lg:w-[27rem] xl:w-[30rem] bg-white dark:bg-[#18191c] shadow-xl rounded-xl group">
               <div className="relative w-full rounded-xl">
                 <img
                   className="rounded-xl object-cover object-top h-auto"

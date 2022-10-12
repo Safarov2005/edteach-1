@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Input from "./Input";
 import { login, register } from "../../actions/auth";
+import toast, { Toaster } from 'react-hot-toast';
 
 const initialState = {
   userType: "",
@@ -39,6 +40,7 @@ function Auth() {
     if (isSignup) {
       dispatch(register(formData, history));
     } else {
+      toast.error("Foydalanuvchi topilmadi yoki parol xato!");
       dispatch(login(formData, history));
     }
   };
@@ -101,70 +103,69 @@ function Auth() {
                     type="email"
                   />
                 </>
-              )}
-
+              )}<Input
+              name="userName"
+              label={
+                isLanguageEnglish
+                  ? "User Name"
+                  : "Foydalanuvchi nomi. Maxsimal 5ta belgi"
+              }
+              handleChange={handleChange}
+            />
+            <Input
+              name="password"
+              label={isLanguageEnglish ? "Password" : "Maxfiy parol"}
+              handleChange={handleChange}
+              type={showPassword ? "text" : "password"}
+              handleShowPassword={handleShowPassword}
+            />
+            <Toaster position="top-right" reverseOrder={false} />
+            {isSignup && (
               <Input
-                name="userName"
+                name="confirmPassword"
                 label={
                   isLanguageEnglish
-                    ? "User Name"
-                    : "Foydalanuvchi nomi. Maxsimal 5ta belgi"
+                    ? "Repeat password"
+                    : "Maxfiy parol qayta tering!"
                 }
                 handleChange={handleChange}
+                type="password"
               />
-              <Input
-                name="password"
-                label={isLanguageEnglish ? "Password" : "Maxfiy parol"}
-                handleChange={handleChange}
-                type={showPassword ? "text" : "password"}
-                handleShowPassword={handleShowPassword}
-              />
-              {isSignup && (
-                <Input
-                  name="confirmPassword"
-                  label={
-                    isLanguageEnglish
-                      ? "Repeat password"
-                      : "Maxfiy parol qayta tering!"
-                  }
-                  handleChange={handleChange}
-                  type="password"
-                />
-              )}
+            )}
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            {isSignup
+              ? isLanguageEnglish
+                ? "Sign up"
+                : "Ro`yhatdan o`ting"
+              : isLanguageEnglish
+              ? "Sign in"
+              : "Kirish"}
+          </Button>
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Button onClick={switchMode}>
+                {isSignup
+                  ? isLanguageEnglish
+                    ? "Already have an account? Sign in"
+                    : "Allaqachon hiobingiz bormi? Kirish"
+                  : isLanguageEnglish
+                  ? "Don't have an account? Sign Up"
+                  : "Hisobingiz bo`lmasa, Ro`yhatdan o`tish."}
+              </Button>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              {isSignup
-                ? isLanguageEnglish
-                  ? "Sign up"
-                  : "Ro`yhatdan o`ting"
-                : isLanguageEnglish
-                ? "Sign in"
-                : "Kirish"}
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Button onClick={switchMode}>
-                  {isSignup
-                    ? isLanguageEnglish
-                      ? "Already have an account? Sign in"
-                      : "Allaqachon hiobingiz bormi? Kirish"
-                    : isLanguageEnglish
-                    ? "Don't have an account? Sign Up"
-                    : "Hisobingiz bo`lmasa, Ro`yhatdan o`tish."}
-                </Button>
-              </Grid>
-            </Grid>
-          </form>
-        </Paper>
-      </Container>
-    </div>
-  );
+          </Grid>
+        </form>
+      </Paper>
+    </Container>
+  </div>
+);
 }
 
 export default Auth;

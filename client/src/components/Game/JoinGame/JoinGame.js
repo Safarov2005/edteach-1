@@ -65,18 +65,18 @@ function JoinGame() {
           </button>
         </div>
       ) : (
-        <div className={styles.section}>
+        <div className="flex flex-col items-center justify-center h-[90vh] space-y-2">
           <h2>
             {isLanguageEnglish
               ? "You joined the game"
               : "Siz o`yinga qo`shildingiz"}
           </h2>
-          <h4>
+          <h4 className="mb-10">
             {isLanguageEnglish
               ? "Waiting on a host to start the game"
               : "Jamoadoshlar qo`shilishini biroz kuting"}
           </h4>
-          <CircularProgress />
+            <CircularProgress />
         </div>
       )}
     </div>

@@ -5,8 +5,8 @@ import styles from "./question.module.css"
 function Question({ question }) {
   console.log(question)
   return (
-    <div className={styles["quiz-card"]}>
-      <div>
+    <div className="overflow-hidden bg-gray-100">
+      <div className="bg-gray-200 my-2">
         <QuestionListItem
           key={question.questionIndex}
           number={question.questionIndex}

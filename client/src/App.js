@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react"
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
 import Home from "./components/Home/Home"
@@ -15,6 +14,8 @@ import { io } from "socket.io-client"
 import { useDispatch } from "react-redux"
 import { createSocket } from "./actions/socket"
 import Navbar from "./components/Navbar/Navbar"
+import UseFul from "./components/useFul/UseFul"
+import Links from "./components/Links/Links"
 
 // Hello world 
 function App() {
@@ -39,6 +40,8 @@ function App() {
           component={() => (user === null ? <Auth /> : <Redirect to="/" />)}
         />
         <Route path="/quizes" exact component={Quizes} />
+        <Route path="/useful" exact component={UseFul} />
+        <Route path="/links" exact component={Links} />
         <Route path="/quizes/search" exact component={Quizes} />
         <Route path="/quizes/:id" exact component={QuizDetails} />
         <Route path="/myquizes/:id" exact component={QuizCreator} />

@@ -6,7 +6,7 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
-
+// import styles from "./navbar.module.css";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import decode from "jwt-decode";
@@ -60,49 +60,21 @@ export default function Navbarr() {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {user ? (
-        <>
-          <li>
-            <Link
-              className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              aria-current="page"
-              to="/quizes"
-            >
-              <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-              >
-                <span className="flex items-center">
-                  {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
-                </span>
-              </Typography>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/games/joingame"
-              className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >
-              <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-              >
-                <span className="flex items-center">
-                  {isLanguageEnglish ? "Pin Access" : "Pin orqali kirish"}
-                </span>
-              </Typography>
-            </Link>
-          </li>
-          {user.result.userType === "Ustoz" && (
+    <div
+      className={
+        user
+          ? "lg:flex items-center gap-[20px]"
+          : "lg:flex lg:flex-row-reverse  items-center gap-[20px]"
+      }
+    >
+      <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+        {user ? (
+          <>
             <li>
               <Link
-                to="/myquizes"
-                className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dark:text-white"
+                aria-current="page"
+                to="/quizes"
               >
                 <Typography
                   as="li"
@@ -111,33 +83,72 @@ export default function Navbarr() {
                   className="p-1 font-normal"
                 >
                   <span className="flex items-center">
-                    {isLanguageEnglish ? "My Quizes" : "Testlarim"}
+                    {isLanguageEnglish ? "Public quizes" : "Ommaviy testlar"}
                   </span>
                 </Typography>
               </Link>
             </li>
-          )}
-        </>
-      ) : (
-        <Link
-          to="/auth"
-          className="block py-2 pr-4 pl-3 text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-        >
-          <Typography
-            as="li"
-            variant="small"
-            color="blue-gray"
-            className="p-1 font-normal"
+            <li>
+              <Link
+                to="/games/joingame"
+                className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                <Typography
+                  as="li"
+                  variant="small"
+                  color="blue-gray"
+                  className="p-1 font-normal"
+                >
+                  <span className="flex items-center">
+                    {isLanguageEnglish ? "Pin Access" : "Pin orqali kirish"}
+                  </span>
+                </Typography>
+              </Link>
+            </li>
+            {user.result.userType === "Ustoz" && (
+              <li>
+                <Link
+                  to="/myquizes"
+                  className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  <Typography
+                    as="li"
+                    variant="small"
+                    color="blue-gray"
+                    className="p-1 font-normal"
+                  >
+                    <span className="flex items-center">
+                      {isLanguageEnglish ? "My Quizes" : "Testlarim"}
+                    </span>
+                  </Typography>
+                </Link>
+              </li>
+            )}
+          </>
+        ) : (
+          <Link
+            to="/auth"
+            className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
           >
-            <span className="flex items-center">
-              {isLanguageEnglish ? "Log in" : "Kirish"}
-            </span>
-          </Typography>
-        </Link>
-      )}
+            <Typography
+              as="li"
+              variant="small"
+              color="blue-gray"
+              className="p-1 font-normal"
+            >
+              <span className="flex items-center">
+                {isLanguageEnglish ? "Log in" : "Kirish"}
+              </span>
+            </Typography>
+          </Link>
+        )}
+      </ul>
 
-      <li>
-        <span className="flex cursor-pointer" onClick={handeLang}>
+      <div>
+        <span
+          className="flex cursor-pointer  md:px-0 px-[16px]"
+          onClick={handeLang}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -153,9 +164,8 @@ export default function Navbarr() {
             />
           </svg>
 
-          {isLanguageEnglish ? "EN" : "UZ"}
+          <div>{isLanguageEnglish ? "EN" : "UZ"}</div>
         </span>
-
         <OutsideClickHandler
           onOutsideClick={() => {
             setLang(false);
@@ -172,15 +182,14 @@ export default function Navbarr() {
             </li>
           </ul>
         </OutsideClickHandler>
-      </li>
-    </ul>
+      </div>
+    </div>
   );
   return (
-    <Navbar className="bg-[#111817] opacity-90 sticky top-2 z-10 left-0 mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+    <Navbar className="bg-[#111817] opacity-90 sticky top-2 border-0 z-10 left-2 right-2 md:left-0 md:right-0 mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="#"
           variant="small"
           className="mr-4 cursor-pointer py-1.5 font-normal"
         >
@@ -188,57 +197,62 @@ export default function Navbarr() {
             <span className="font-bold">Ed Teach</span>
           </Link>
         </Typography>
-        <div className="hidden lg:block">{navList}</div>
-        <li className="flex  py-2 pr-4 pl-3 text-gray-700">
-          {user ? (
-            <>
-              <img
-                className={
-                  profile
-                    ? "rounded-[50%] w-10 cursor-pointer border-white"
-                    : " w-10 rounded-[50%] cursor-pointer"
-                }
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                onClick={handeProfile}
-              />
 
-              <OutsideClickHandler
-                onOutsideClick={() => {
-                  setProfile(false);
-                }}
-              >
-                <div
+        <div className="hidden lg:block">{navList}</div>
+        {user ? (
+          <li className="flex lg:m-0  ml-auto py-2 pr-4 pl-3 text-gray-700">
+            {user ? (
+              <>
+                <img
                   className={
                     profile
-                      ? "block text-center absolute mt-10 right-10 w-48 bg-gray-100 p-2 text-xs rounded-lg"
-                      : "hidden"
+                      ? "rounded-[50%] md:w-10 w-7 cursor-pointer border-white"
+                      : "md:w-10 w-7 rounded-[50%] cursor-pointer"
                   }
-                >
-                  <ul>
-                    <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
-                      {user.result.userName}
-                    </li>
-                    <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
-                      {user.result.firstName + " " + user.result.lastName}
-                    </li>
-                    <li className="py-1 hover:bg-gray-200  transition-all rounded-sm">
-                      {user.result.mail}
-                    </li>
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                  onClick={handeProfile}
+                />
 
-                    <li
-                      onClick={logout}
-                      className="py-1 hover:bg-red-700 cursor-pointer hover:text-white transition-all rounded-sm"
-                    >
-                      {isLanguageEnglish ? "Log out" : "Chiqish"}
-                    </li>
-                  </ul>
-                </div>
-              </OutsideClickHandler>
-            </>
-          ) : (
-            ""
-          )}
-        </li>
+                <OutsideClickHandler
+                  onOutsideClick={() => {
+                    setProfile(false);
+                  }}
+                >
+                  <div
+                    className={
+                      profile
+                        ? "block text-center absolute mt-10 right-10 w-48 bg-gray-100 p-2 text-xs rounded-lg"
+                        : "hidden"
+                    }
+                  >
+                    <ul>
+                      <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
+                        {user.result.userName}
+                      </li>
+                      <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
+                        {user.result.firstName + " " + user.result.lastName}
+                      </li>
+                      <li className="py-1 hover:bg-gray-200 transition-all rounded-sm">
+                        {user.result.mail}
+                      </li>
+
+                      <li
+                        onClick={logout}
+                        className="py-1 hover:bg-red-700 cursor-pointer hover:text-white transition-all rounded-sm"
+                      >
+                        {isLanguageEnglish ? "Log out" : "Chiqish"}
+                      </li>
+                    </ul>
+                  </div>
+                </OutsideClickHandler>
+              </>
+            ) : (
+              ""
+            )}
+          </li>
+        ) : (
+          ""
+        )}
         <IconButton
           variant="text"
           className="pb-5 pr-5 h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -277,7 +291,10 @@ export default function Navbarr() {
           )}
         </IconButton>
       </div>
-      <MobileNav className="flex" open={openNav}>
+      <MobileNav
+        className={openNav ? "flex items-center !h-auto !opacity-[1]" : "hidden !h-0"}
+        open={openNav}
+      >
         <span className="mx-auto">{navList}</span>
       </MobileNav>
     </Navbar>

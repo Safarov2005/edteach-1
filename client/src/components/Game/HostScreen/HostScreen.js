@@ -25,14 +25,14 @@ function HostScreen() {
   const [questionData, setQuestionData] = useState({
     questionType: "Quiz",
     pointType: "Standard",
-    answerTime: 5,
-    backgroundImage: "",
-    question: "",
+    answerTime: 10,
+    backgroundImage: "/logo.png",
+    question: "qaysi javobda savol 1 yozilgan?",
     answerList: [
-      { name: "a", body: "", isCorrect: false },
-      { name: "b", body: "", isCorrect: false },
-      { name: "c", body: "", isCorrect: false },
-      { name: "d", body: "", isCorrect: false },
+      { name: "a", body: "savol 1", isCorrect: true },
+      { name: "b", body: "savol 2", isCorrect: false },
+      { name: "c", body: "savol 3", isCorrect: false },
+      { name: "d", body: "savol 4", isCorrect: false },
     ],
     questionIndex: 1,
   });
@@ -90,7 +90,7 @@ function HostScreen() {
   const startGame = () => {
     socket.emit("start-game", quiz);
     socket.emit("question-preview", () => {
-      startPreviewCountdown(5, currentQuestionIndex);
+      startPreviewCountdown(10, currentQuestionIndex);
     });
     setIsGameStarted((prevstate) => !prevstate);
     setIsPreviewScreen(true);
@@ -167,9 +167,12 @@ function HostScreen() {
       {!isGameStarted && (
         <div className={styles.lobby}>
           <WaitingRoom pin={game?.pin} socket={socket} />
-          <button className="bg-blue-500 w-[100%] md:w-[90%] xl:w-[40%] rounded-lg py-3 px-8 cursor-pointer active:scale-95
+          <button
+            className="bg-blue-500 w-[100%] md:w-[90%] xl:w-[40%] rounded-lg py-3 px-8 cursor-pointer active:scale-95
               shadow-md text-sm duration-300 ease-in-out hover:bg-blue-500
-              md:text-sm text-white mt-4" onClick={startGame}>
+              md:text-sm text-white mt-4"
+            onClick={startGame}
+          >
             {isLanguageEnglish ? "Start a game" : "Boshlash"}
           </button>
         </div>

@@ -21,7 +21,7 @@ const getPlayer = (socketId) => {
 
 io.on("connection", (socket) => {
   socket.on("disconnect", (reason) => {
-    console.log("Socket " + socket.id + " was disconnected");
+    console.log("Socket " + socket.id + " ishtorkchi honadan chiqdi");
     console.log(reason);
   });
   socket.on("init-game", (newGame, newLeaderboard) => {
@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
     socket.join(game.pin);
     hostId = socket.id;
     console.log(
-      "Host with id " + socket.id + " started game and joined room: " + game.pin
+      "Host with id " + socket.id + " idliy ishtorkchi hona qo'shildi: " + game.pin
     );
   });
 
