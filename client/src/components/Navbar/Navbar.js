@@ -59,20 +59,27 @@ export default function Navbarr() {
     );
   }, []);
 
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    setUrl(location.pathname);
+  }, [location]);
+
   const navList = (
-    <div
-      className={
-        user
-          ? "lg:flex items-center gap-[20px]"
-          : "lg:flex lg:flex-row-reverse  items-center gap-[20px]"
-      }
-    >
+    <div className={user ? "flex items-start   lg:items-center gap-[20px]" : "flex items-start flex-row-reverse  lg:items-center gap-[20px]"}>
+
       <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
         {user ? (
           <>
             <li>
               <Link
-                className="block py-2 pr-4 pl-3 text-white rounded md:bg-transparent md:p-0 dark:text-white"
+                // className="block py-2 pr-4 pl-3 text-white hover:border-b-2 hover:border-white rounded md:bg-transparent dark:text-white transition"
+                className={
+                  url !== null
+                    ? url == "/quizes"
+                      ? "block relative  before:content-[''] before:bottom-0 before:absolute before:w-full before:h-[1.5px] before:bg-[white]  before:left-0  py-2 pr-4 pl-3 text-white  md:bg-transparent transition"
+                      : "block relative  before:content-[''] before:bottom-0 before:absolute before:w-0 hover:before:w-full before:duration-300 hover:before:h-[1.5px] hover:before:bg-[white]  before:left-0  py-2 pr-4 pl-3   md:bg-transparent transition"
+                    : ""
+                }
                 aria-current="page"
                 to="/quizes"
               >
@@ -91,7 +98,13 @@ export default function Navbarr() {
             <li>
               <Link
                 to="/games/joingame"
-                className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={
+                  url !== null
+                    ? url == "/games/joingame"
+                      ? "block relative  before:content-[''] before:bottom-0 before:absolute before:w-full before:h-[1.5px] before:bg-[white]  before:left-0  py-2 pr-4 pl-3 text-white  md:bg-transparent transition"
+                      : "block relative  before:content-[''] before:bottom-0 before:absolute before:w-0 hover:before:w-full before:duration-300 hover:before:h-[1.5px] hover:before:bg-[white]  before:left-0  py-2 pr-4 pl-3   md:bg-transparent "
+                    : ""
+                }
               >
                 <Typography
                   as="li"
@@ -105,11 +118,39 @@ export default function Navbarr() {
                 </Typography>
               </Link>
             </li>
+            <li>
+              <Link
+                to="/useful"
+                className={
+                  url !== null
+                    ? url == "/useful" ? "block relative  before:content-[''] before:bottom-0 before:absolute before:w-full  before:h-[1.5px] before:bg-[white]  before:left-0  py-2 pr-4 pl-3 text-white  md:bg-transparent transition"
+                      : "block relative  before:content-[''] before:bottom-0 before:absolute before:w-0 hover:before:w-full before:duration-300 hover:before:h-[1.5px] hover:before:bg-[white]  before:left-0  py-2 pr-4 pl-3   md:bg-transparent transition"
+                    : ""
+                }
+              >
+                <Typography
+                  as="li"
+                  variant="small"
+                  color="blue-gray"
+                  className="p-1 font-normal"
+                >
+                  <span className="flex items-center">
+                    {isLanguageEnglish ? "Useful" : "Foydali"}
+                  </span>
+                </Typography>
+              </Link>
+            </li>
             {user.result.userType === "Ustoz" && (
               <li>
                 <Link
                   to="/myquizes"
-                  className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className={
+                    url !== null
+                      ? url == "/myquizes"
+                        ? "block relative  before:content-[''] before:bottom-0 before:absolute before:w-full before:h-[1.5px] before:bg-[white]  before:left-0  py-2 pr-4 pl-3 text-white  md:bg-transparent transition"
+                        : "block relative  before:content-[''] before:bottom-0 before:absolute before:w-0 hover:before:w-full before:duration-300 hover:before:h-[1.5px] hover:before:bg-[white]  before:left-0  py-2 pr-4 pl-3   md:bg-transparent transition"
+                      : ""
+                  }
                 >
                   <Typography
                     as="li"
@@ -123,12 +164,14 @@ export default function Navbarr() {
                   </Typography>
                 </Link>
               </li>
+
+
             )}
           </>
         ) : (
           <Link
             to="/auth"
-            className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            className="block py-2 pr-4 pt-0 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
           >
             <Typography
               as="li"
@@ -145,10 +188,7 @@ export default function Navbarr() {
       </ul>
 
       <div>
-        <span
-          className="flex cursor-pointer  md:px-0 px-[16px]"
-          onClick={handeLang}
-        >
+        <span className={user ? "flex cursor-pointer lg:mt-0 mt-[20px]   md:px-0 px-[16px]" : "flex lg:p-0 p-[12px] cursor-pointer md:px-0 px-[16px]"} onClick={handeLang}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -164,7 +204,9 @@ export default function Navbarr() {
             />
           </svg>
 
-          <div>{isLanguageEnglish ? "EN" : "UZ"}</div>
+          <div>
+            {isLanguageEnglish ? "EN" : "UZ"}
+          </div>
         </span>
         <OutsideClickHandler
           onOutsideClick={() => {
@@ -173,12 +215,12 @@ export default function Navbarr() {
         >
           <ul className={lang ? "visible" : "hidden bg-gray-100"}>
             <li
-              className="cursor-pointer"
+              className="cursor-pointer relative"
               onClick={() => {
                 dispatch(changeLanguage(!isLanguageEnglish));
               }}
             >
-              <span>{isLanguageEnglish ? "O`zbek" : "English"}</span>
+              <span className="absolute top-0 left-0 lg:pl-[10px] pl-[18px]  bg-[#111817] opacity-[0.9] p-[10px]">{isLanguageEnglish ? "O`zbek" : "English"} <p>Ruscha</p> <p>Qozoqcha</p></span>
             </li>
           </ul>
         </OutsideClickHandler>
@@ -186,7 +228,7 @@ export default function Navbarr() {
     </div>
   );
   return (
-    <Navbar className="bg-[#111817] opacity-90 sticky top-2 border-0 z-10 left-2 right-2 md:left-0 md:right-0 mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+    <Navbar className="bg-[#111817] opacity-90 sticky top-2 border-0 z-10 left-0 mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -291,10 +333,7 @@ export default function Navbarr() {
           )}
         </IconButton>
       </div>
-      <MobileNav
-        className={openNav ? "flex items-center !h-auto !opacity-[1]" : "hidden !h-0"}
-        open={openNav}
-      >
+      <MobileNav className={openNav ? "block !h-auto !opacity-[1]" : "hidden !h-0"} open={openNav}>
         <span className="mx-auto">{navList}</span>
       </MobileNav>
     </Navbar>
